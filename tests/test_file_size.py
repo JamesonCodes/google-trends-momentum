@@ -6,7 +6,7 @@ Test script for file size optimization
 import sys
 import os
 import json
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
 
 from build_data import TrendsDataPipeline
 import numpy as np

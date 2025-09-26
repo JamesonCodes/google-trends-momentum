@@ -5,7 +5,7 @@ Test script for filtering and capping functionality
 
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
 
 from build_data import TrendsDataPipeline
 import numpy as np

@@ -137,7 +137,7 @@ describe('DataService', () => {
       { category: 'business', term: 'test4' }
     ];
 
-    const categories = dataService.getCategories(topics as { category: string; term: string }[]);
+    const categories = dataService.getCategories(topics as any);
 
     expect(categories).toEqual(['ai-tools', 'business', 'tech']);
   });

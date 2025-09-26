@@ -317,3 +317,426 @@
 2025-09-25 22:38:11,088 - build_data - ERROR - log_error:100 - [UNEXPECTED_ERROR] Unexpected error for term invalid_term: HTTPSConnectionPool(host='www.google.com', port=443): Max retries exceeded with url: /sorry/index?continue=https://trends.google.com/trends/api/explore%3Fhl%3Den-US%26tz%3D360%26req%3D%257B%2522comparisonItem%2522%253A%2B%255B%257B%2522keyword%2522%253A%2B%2522invalid_term%2522%252C%2B%2522time%2522%253A%2B%2522today%2B12-m%2522%252C%2B%2522geo%2522%253A%2B%2522%2522%257D%255D%252C%2B%2522category%2522%253A%2B0%252C%2B%2522property%2522%253A%2B%2522%2522%257D&hl=en-US&q=EhAmABcAGXmYALA04crbOrXRGKKV2MYGIi8yOx1Fd7coCwMFCuqZwQv3UudxCo3O2Y0vmrAzh5qjjW-LXiE4_66HE_5TwOFNzDICclJaAUM (Caused by ResponseError('too many 429 error responses'))
 2025-09-25 22:38:11,092 - build_data - INFO - _rate_limit:194 - Rate limiting: sleeping for 13.6 seconds
 2025-09-25 22:38:25,194 - build_data - WARNING - log_warning:111 - [NO_DATA] No interest data for term: another_valid_term
+2025-09-26 08:10:42,611 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:42,825 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:42,825 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:42,950 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:42,951 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:43,082 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:43,083 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:43,083 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 3 duplicates removed, 1 unique topics remaining
+2025-09-26 08:10:43,083 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:43,088 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 1 duplicates removed, 3 unique topics remaining
+2025-09-26 08:10:43,088 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:43,088 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Python3' over 'Python 3' (similarity: 93.3%)
+2025-09-26 08:10:43,088 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-26 08:10:43,088 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:43,088 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-26 08:10:43,648 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:43,843 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:43,847 - build_data - INFO - _save_data:790 - Saved 5 topics to public/data/latest.json
+2025-09-26 08:10:43,847 - build_data - INFO - _save_data:811 - Created and validated archive: 2025-09-26.json
+2025-09-26 08:10:43,847 - build_data - INFO - _save_data:830 - Output file size: 2.5KB
+2025-09-26 08:10:43,848 - build_data - INFO - _cleanup_archives:665 - Archive cleanup complete: 0 removed, 1 remaining
+2025-09-26 08:10:43,848 - build_data - DEBUG - _cleanup_archives:669 - Remaining archives:
+2025-09-26 08:10:43,848 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26.json (0 days old)
+2025-09-26 08:10:43,848 - build_data - INFO - _save_data:838 - Archive system status: 1 files, 2.5KB total, range: 2025-09-26 to 2025-09-26
+2025-09-26 08:10:43,848 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:43,983 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:43,991 - build_data - INFO - _cleanup_archives:658 - Removed old archive: 2025-09-18.json (8 days old)
+2025-09-26 08:10:43,991 - build_data - INFO - _cleanup_archives:658 - Removed old archive: 2025-09-17.json (9 days old)
+2025-09-26 08:10:43,991 - build_data - INFO - _cleanup_archives:665 - Archive cleanup complete: 2 removed, 8 remaining
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:669 - Remaining archives:
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26.json (0 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-25.json (1 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-24.json (2 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-23.json (3 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-22.json (4 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-21.json (5 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-20.json (6 days old)
+2025-09-26 08:10:43,991 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-19.json (7 days old)
+2025-09-26 08:10:43,992 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:44,128 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:44,129 - build_data - WARNING - _validate_archive:685 - Archive public/data/archive/invalid_test.json missing required fields
+2025-09-26 08:10:44,130 - build_data - WARNING - _validate_archive:704 - Archive public/data/archive/corrupted_test.json is corrupted: Expecting value: line 1 column 1 (char 0)
+2025-09-26 08:10:44,130 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:44,264 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:44,266 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:44,402 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:44,404 - build_data - INFO - _save_data:790 - Saved 3 topics to public/data/latest.json
+2025-09-26 08:10:44,404 - build_data - WARNING - _save_data:798 - Archive for today already exists: 2025-09-26.json
+2025-09-26 08:10:44,405 - build_data - INFO - _save_data:811 - Created and validated archive: 2025-09-26_081044.json
+2025-09-26 08:10:44,405 - build_data - INFO - _save_data:830 - Output file size: 1.5KB
+2025-09-26 08:10:44,406 - build_data - INFO - _cleanup_archives:658 - Removed old archive: 2024-01-12.json (623 days old)
+2025-09-26 08:10:44,406 - build_data - INFO - _cleanup_archives:658 - Removed old archive: 2024-01-11.json (624 days old)
+2025-09-26 08:10:44,406 - build_data - INFO - _cleanup_archives:658 - Removed old archive: 2024-01-10.json (625 days old)
+2025-09-26 08:10:44,406 - build_data - INFO - _cleanup_archives:665 - Archive cleanup complete: 3 removed, 9 remaining
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:669 - Remaining archives:
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26_081044.json (0 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26.json (0 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-25.json (1 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-24.json (2 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-23.json (3 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-22.json (4 days old)
+2025-09-26 08:10:44,406 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-21.json (5 days old)
+2025-09-26 08:10:44,407 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-20.json (6 days old)
+2025-09-26 08:10:44,407 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-19.json (7 days old)
+2025-09-26 08:10:44,407 - build_data - INFO - _save_data:838 - Archive system status: 9 files, 21.3KB total, range: 2025-09-19 to 2025-09-26
+2025-09-26 08:10:44,407 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:44,539 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:45,048 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:45,189 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:45,189 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 3 topics
+2025-09-26 08:10:45,189 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 2 duplicates removed, 1 unique topics remaining
+2025-09-26 08:10:45,189 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:45,190 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'ChatGPT' over 'Chat GPT' (similarity: 93.3%)
+2025-09-26 08:10:45,190 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-26 08:10:45,190 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 3 topics
+2025-09-26 08:10:45,190 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Machine Learning' over 'Learning Machine' (similarity: 100.0%)
+2025-09-26 08:10:45,190 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 1 duplicates removed, 2 unique topics remaining
+2025-09-26 08:10:45,190 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 4 topics
+2025-09-26 08:10:45,191 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Blockchain' over 'AI' (similarity: 100.0%)
+2025-09-26 08:10:45,191 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Artificial Intelligence' over 'Artificial' (similarity: 100.0%)
+2025-09-26 08:10:45,191 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-26 08:10:45,191 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 3 topics
+2025-09-26 08:10:45,191 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 0 duplicates removed, 3 unique topics remaining
+2025-09-26 08:10:45,191 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:45,325 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:45,325 - build_data - INFO - _deduplicate_topics:355 - Starting deduplication of 16 topics
+2025-09-26 08:10:45,325 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Python' over 'Python Programming' (similarity: 100.0%)
+2025-09-26 08:10:45,326 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'Node.js' over 'JS' (similarity: 100.0%)
+2025-09-26 08:10:45,326 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'React' over 'React.js' (similarity: 100.0%)
+2025-09-26 08:10:45,326 - build_data - DEBUG - _deduplicate_topics:409 - Kept 'React' over 'ReactJS' (similarity: 100.0%)
+2025-09-26 08:10:45,326 - build_data - INFO - _deduplicate_topics:416 - Deduplication complete: 6 duplicates removed, 10 unique topics remaining
+2025-09-26 08:10:45,852 - build_data - ERROR - log_error:100 - [TEST_ERROR] This is a test error
+2025-09-26 08:10:45,853 - build_data - WARNING - log_warning:111 - [TEST_WARNING] This is a test warning
+2025-09-26 08:10:45,856 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:46,001 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:46,001 - build_data - INFO - run:848 - Starting Rising Topics data pipeline
+2025-09-26 08:10:46,001 - build_data - INFO - run:861 - Processing category: test-category with 1 terms
+2025-09-26 08:10:46,001 - build_data - INFO - _process_category:535 - Processing category: test-category with 1 terms
+2025-09-26 08:10:46,001 - build_data - INFO - _process_category:539 - Processing term: invalid_term_that_will_fail
+2025-09-26 08:10:46,538 - build_data - WARNING - log_warning:111 - [NO_DATA] No interest data for term: invalid_term_that_will_fail
+2025-09-26 08:10:46,539 - build_data - INFO - run:869 - Category test-category completed: 0 topics collected
+2025-09-26 08:10:46,539 - build_data - INFO - run:880 - Collected 0 topics before deduplication
+2025-09-26 08:10:46,539 - build_data - INFO - run:886 - After deduplication: 0 topics
+2025-09-26 08:10:46,539 - build_data - INFO - run:900 - Final scores calculated successfully
+2025-09-26 08:10:46,539 - build_data - INFO - run:916 - Final filtering and capping completed
+2025-09-26 08:10:46,539 - build_data - INFO - _save_data:790 - Saved 0 topics to public/data/latest.json
+2025-09-26 08:10:46,540 - build_data - INFO - _save_data:811 - Created and validated archive: 2025-09-26.json
+2025-09-26 08:10:46,540 - build_data - INFO - _save_data:830 - Output file size: 0.1KB
+2025-09-26 08:10:46,540 - build_data - INFO - _cleanup_archives:665 - Archive cleanup complete: 0 removed, 1 remaining
+2025-09-26 08:10:46,540 - build_data - DEBUG - _cleanup_archives:669 - Remaining archives:
+2025-09-26 08:10:46,540 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26.json (0 days old)
+2025-09-26 08:10:46,541 - build_data - INFO - _save_data:838 - Archive system status: 1 files, 0.1KB total, range: 2025-09-26 to 2025-09-26
+2025-09-26 08:10:46,541 - build_data - INFO - run:930 - Data saved successfully
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:964 - ============================================================
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:965 - RISING TOPICS PIPELINE EXECUTION SUMMARY
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:966 - ============================================================
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:967 - Runtime: 0.5 seconds
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:968 - Final topics: 0
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:969 - Categories processed: 1
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:970 - Terms processed: 1
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:971 - API calls made: 1
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:972 - API errors: 0
+2025-09-26 08:10:46,541 - build_data - INFO - _log_pipeline_summary:973 - Total errors: 0
+2025-09-26 08:10:46,542 - build_data - INFO - _log_pipeline_summary:974 - Total warnings: 1
+2025-09-26 08:10:46,542 - build_data - INFO - _log_pipeline_summary:980 - Warning types: NO_DATA
+2025-09-26 08:10:46,542 - build_data - INFO - _log_pipeline_summary:984 - STATUS: SUCCESS - No errors encountered
+2025-09-26 08:10:46,542 - build_data - INFO - _log_pipeline_summary:990 - ============================================================
+2025-09-26 08:10:46,542 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:46,684 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:46,685 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:46,817 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:47,355 - build_data - WARNING - log_warning:111 - [NO_DATA] No interest data for term: invalid_term_that_does_not_exist
+2025-09-26 08:10:47,356 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:10:47,492 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:10:47,923 - build_data - WARNING - log_warning:111 - [NO_DATA] No interest data for term: valid_term
+2025-09-26 08:10:47,923 - build_data - INFO - _rate_limit:194 - Rate limiting: sleeping for 12.8 seconds
+2025-09-26 08:11:01,290 - build_data - DEBUG - _get_interest_over_time:226 - Successfully retrieved 53 data points for invalid_term
+2025-09-26 08:11:01,291 - build_data - INFO - _rate_limit:194 - Rate limiting: sleeping for 12.6 seconds
+2025-09-26 08:11:14,488 - build_data - WARNING - log_warning:111 - [NO_DATA] No interest data for term: another_valid_term
+2025-09-26 08:11:15,272 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:15,440 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_0 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_1 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_2 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_3 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_4 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_5 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_6 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_7 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_8 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_9 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_10 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_11 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_12 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_13 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_14 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_15 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_16 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_17 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_18 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_19 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_20 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_21 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_22 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_23 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_24 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_25 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_26 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_27 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_28 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_29 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_30 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_31 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_32 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_33 from 52 to 24 points
+2025-09-26 08:11:15,440 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_34 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_35 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_36 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_37 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_38 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_39 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_40 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_41 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_42 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_43 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_44 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_45 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_46 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_47 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_48 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_49 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_50 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_51 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_52 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_53 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_54 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_55 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_56 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_57 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_58 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_59 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_60 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_61 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_62 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_63 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_64 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_65 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_66 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_67 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_68 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_69 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_70 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_71 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_72 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_73 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_74 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_75 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_76 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_77 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_78 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_79 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_80 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_81 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_82 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_83 from 52 to 24 points
+2025-09-26 08:11:15,441 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_84 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_85 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_86 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_87 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_88 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_89 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_90 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_91 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_92 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_93 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_94 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_95 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_96 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_97 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_98 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_99 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_100 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_101 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_102 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_103 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_104 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_105 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_106 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_107 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_108 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_109 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_110 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_111 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_112 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_113 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_114 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_115 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_116 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_117 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_118 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_119 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_120 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_121 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_122 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_123 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_124 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_125 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_126 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_127 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_128 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_129 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_130 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_131 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_132 from 52 to 24 points
+2025-09-26 08:11:15,442 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_133 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_134 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_135 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_136 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_137 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_138 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_139 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_140 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_141 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_142 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_143 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_144 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_145 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_146 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_147 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_148 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_149 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_150 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_151 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_152 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_153 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_154 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_155 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_156 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_157 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_158 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_159 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_160 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_161 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_162 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_163 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_164 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_165 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_166 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_167 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_168 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_169 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_170 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_171 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_172 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_173 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_174 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_175 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_176 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_177 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_178 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_179 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_180 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_181 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_182 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_183 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_184 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_185 from 52 to 24 points
+2025-09-26 08:11:15,443 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_186 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_187 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_188 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_189 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_190 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_191 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_192 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_193 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_194 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_195 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_196 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_197 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_198 from 52 to 24 points
+2025-09-26 08:11:15,444 - build_data - DEBUG - _optimize_sparklines:766 - Trimmed sparkline for large_topic_199 from 52 to 24 points
+2025-09-26 08:11:16,059 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:16,206 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:16,206 - build_data - DEBUG - _passes_quality_filters:467 - ✅ test_term passed all quality filters (volume: 47.5, volatility: 20.0)
+2025-09-26 08:11:16,206 - build_data - DEBUG - _passes_quality_filters:427 - Skipping test_term: volume too low (1.5 < 10)
+2025-09-26 08:11:16,206 - build_data - DEBUG - _passes_quality_filters:438 - Skipping test_term: too volatile (60.0 > 50.0)
+2025-09-26 08:11:16,207 - build_data - DEBUG - _passes_quality_filters:444 - Skipping test_term: no recent activity
+2025-09-26 08:11:16,207 - build_data - DEBUG - _passes_quality_filters:427 - Skipping test_term: volume too low (0.0 < 10)
+2025-09-26 08:11:16,207 - build_data - DEBUG - _passes_quality_filters:456 - Skipping test_term: trend too weak (slope: 0.05, change: 2.0%)
+2025-09-26 08:11:16,207 - build_data - DEBUG - _passes_quality_filters:438 - Skipping test_term: too volatile (300.0 > 50.0)
+2025-09-26 08:11:16,207 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:16,332 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:16,335 - build_data - INFO - _apply_final_filtering_and_capping:476 - Applying final filtering and capping to 25 topics
+2025-09-26 08:11:16,335 - build_data - INFO - _apply_final_filtering_and_capping:482 - Removed 5 topics with negative scores
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:491 - Removed 2 low-quality topics (score < 0.20)
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:510 - Final topic distribution by category:
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:512 -   ai-tools: 5 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:512 -   crypto: 3 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:512 -   ecommerce: 10 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:523 - Final filtering complete:
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:524 -   Original: 25 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:525 -   Final: 18 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:526 -   Removed: 7 topics
+2025-09-26 08:11:16,338 - build_data - INFO - _apply_final_filtering_and_capping:527 -   Score range: 0.20 to 12.00 (avg: 5.74)
+2025-09-26 08:11:16,339 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:16,465 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:16,536 - build_data - INFO - _apply_final_filtering_and_capping:476 - Applying final filtering and capping to 500 topics
+2025-09-26 08:11:16,536 - build_data - INFO - _apply_final_filtering_and_capping:482 - Removed 23 topics with negative scores
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:491 - Removed 48 low-quality topics (score < 1.77)
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:500 - Capped to 150 topics (removed 279 lowest scoring)
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:510 - Final topic distribution by category:
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:512 -   ai-tools: 32 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:512 -   crypto: 31 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:512 -   design-tools: 30 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:512 -   ecommerce: 29 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:512 -   fitness: 28 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:523 - Final filtering complete:
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:524 -   Original: 500 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:525 -   Final: 150 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:526 -   Removed: 350 topics
+2025-09-26 08:11:16,537 - build_data - INFO - _apply_final_filtering_and_capping:527 -   Score range: 1.78 to 12.64 (avg: 5.57)
+2025-09-26 08:11:19,594 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:19,729 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:19,729 - build_data - INFO - run:848 - Starting Rising Topics data pipeline
+2025-09-26 08:11:19,729 - build_data - INFO - run:861 - Processing category: ai-tools with 2 terms
+2025-09-26 08:11:19,729 - build_data - INFO - _process_category:535 - Processing category: ai-tools with 2 terms
+2025-09-26 08:11:19,729 - build_data - INFO - _process_category:539 - Processing term: chatgpt
+2025-09-26 08:11:20,316 - build_data - DEBUG - _get_interest_over_time:226 - Successfully retrieved 53 data points for chatgpt
+2025-09-26 08:11:20,317 - build_data - DEBUG - _passes_quality_filters:467 - ✅ chatgpt passed all quality filters (volume: 90.0, volatility: 17.8)
+2025-09-26 08:11:20,317 - build_data - INFO - _rate_limit:194 - Rate limiting: sleeping for 12.0 seconds
+2025-09-26 08:11:33,756 - build_data - ERROR - log_error:100 - [CATEGORY_PROCESSING_ERROR] Failed to process category ai-tools: name 'median_volume' is not defined
+2025-09-26 08:11:33,757 - build_data - INFO - run:880 - Collected 0 topics before deduplication
+2025-09-26 08:11:33,757 - build_data - INFO - run:886 - After deduplication: 0 topics
+2025-09-26 08:11:33,757 - build_data - INFO - run:900 - Final scores calculated successfully
+2025-09-26 08:11:33,757 - build_data - INFO - run:916 - Final filtering and capping completed
+2025-09-26 08:11:33,760 - build_data - INFO - _save_data:790 - Saved 0 topics to public/data/latest.json
+2025-09-26 08:11:33,760 - build_data - WARNING - _save_data:798 - Archive for today already exists: 2025-09-26.json
+2025-09-26 08:11:33,761 - build_data - INFO - _save_data:811 - Created and validated archive: 2025-09-26_081133.json
+2025-09-26 08:11:33,761 - build_data - INFO - _save_data:830 - Output file size: 0.1KB
+2025-09-26 08:11:33,763 - build_data - INFO - _cleanup_archives:665 - Archive cleanup complete: 0 removed, 2 remaining
+2025-09-26 08:11:33,763 - build_data - DEBUG - _cleanup_archives:669 - Remaining archives:
+2025-09-26 08:11:33,763 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26.json (0 days old)
+2025-09-26 08:11:33,763 - build_data - DEBUG - _cleanup_archives:671 -   2025-09-26_081133.json (0 days old)
+2025-09-26 08:11:33,764 - build_data - INFO - _save_data:838 - Archive system status: 2 files, 0.2KB total, range: 2025-09-26 to 2025-09-26
+2025-09-26 08:11:33,764 - build_data - INFO - run:930 - Data saved successfully
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:964 - ============================================================
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:965 - RISING TOPICS PIPELINE EXECUTION SUMMARY
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:966 - ============================================================
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:967 - Runtime: 14.0 seconds
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:968 - Final topics: 0
+2025-09-26 08:11:33,764 - build_data - INFO - _log_pipeline_summary:969 - Categories processed: 0
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:970 - Terms processed: 0
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:971 - API calls made: 1
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:972 - API errors: 0
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:973 - Total errors: 1
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:974 - Total warnings: 0
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:977 - Error types: CATEGORY_PROCESSING_ERROR
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:986 - STATUS: SUCCESS WITH WARNINGS - Minor errors encountered
+2025-09-26 08:11:33,765 - build_data - INFO - _log_pipeline_summary:990 - ============================================================
+2025-09-26 08:11:34,409 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:34,553 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully
+2025-09-26 08:11:34,555 - build_data - DEBUG - __init__:146 - Output directories created successfully
+2025-09-26 08:11:34,682 - build_data - DEBUG - __init__:160 - Pytrends initialized successfully

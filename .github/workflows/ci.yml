@@ -44,8 +44,11 @@ jobs:
     - name: Run TypeScript type checking
       run: npm run type-check
     
+    - name: Run Jest tests
+      run: npm test -- --passWithNoTests
+    
     - name: Run Python tests
-      run: npm run test
+      run: npm run test:python
     
     - name: Run MVP tests
       run: npm run test:mvp
