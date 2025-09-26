@@ -87,7 +87,7 @@ export default function Home() {
             Rising Topics
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Discover the most trending and rising topics across all categories with real-time data and insights
+            Discover trending topics across AI Tools, Tech, Business, and Science categories
           </p>
         </div>
 

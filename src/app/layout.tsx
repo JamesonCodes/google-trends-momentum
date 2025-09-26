@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rising Topics - Discover Trending Topics",
-  description: "Discover trending topics across categories with real-time data and insights",
+  description: "Discover trending topics across AI Tools, Tech, Business, and Science categories",
 };
 
 export default function RootLayout({
