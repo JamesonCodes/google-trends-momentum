@@ -131,13 +131,53 @@ describe('DataService', () => {
 
   it('should extract categories correctly', () => {
     const topics = [
-      { category: 'ai-tools', term: 'test1' },
-      { category: 'tech', term: 'test2' },
-      { category: 'ai-tools', term: 'test3' },
-      { category: 'business', term: 'test4' }
+      { 
+        category: 'ai-tools', 
+        term: 'test1',
+        score: 5,
+        percentChange: 10,
+        sparkline: [1, 2, 3],
+        firstSeen: '2024-01-01T00:00:00.000Z',
+        lastSeen: '2024-01-01T00:00:00.000Z',
+        volume: 100,
+        relatedQueries: []
+      },
+      { 
+        category: 'tech', 
+        term: 'test2',
+        score: 5,
+        percentChange: 10,
+        sparkline: [1, 2, 3],
+        firstSeen: '2024-01-01T00:00:00.000Z',
+        lastSeen: '2024-01-01T00:00:00.000Z',
+        volume: 100,
+        relatedQueries: []
+      },
+      { 
+        category: 'ai-tools', 
+        term: 'test3',
+        score: 5,
+        percentChange: 10,
+        sparkline: [1, 2, 3],
+        firstSeen: '2024-01-01T00:00:00.000Z',
+        lastSeen: '2024-01-01T00:00:00.000Z',
+        volume: 100,
+        relatedQueries: []
+      },
+      { 
+        category: 'business', 
+        term: 'test4',
+        score: 5,
+        percentChange: 10,
+        sparkline: [1, 2, 3],
+        firstSeen: '2024-01-01T00:00:00.000Z',
+        lastSeen: '2024-01-01T00:00:00.000Z',
+        volume: 100,
+        relatedQueries: []
+      }
     ];
 
-    const categories = dataService.getCategories(topics as any);
+    const categories = dataService.getCategories(topics);
 
     expect(categories).toEqual(['ai-tools', 'business', 'tech']);
   });
