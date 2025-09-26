@@ -290,6 +290,120 @@ class TrendsDataPipeline:
         logger.info(f"Deduplication complete: {duplicates_found} duplicates removed, {len(unique_topics)} unique topics remaining")
         return unique_topics
     
+    def _passes_quality_filters(self, term: str, sparkline: List[int], slope: float, percent_change: float, volatility: float) -> bool:
+        """Apply comprehensive quality filters to determine if a topic should be included."""
+        
+        # 1. Volume threshold check (last 8 weeks median)
+        median_volume = np.median(sparkline[-8:])
+        min_volume = self.seeds_data['globalSettings']['minVolumeThreshold']
+        
+        if median_volume < min_volume:
+            logger.debug(f"Skipping {term}: volume too low ({median_volume:.1f} < {min_volume})")
+            return False
+        
+        # 2. Data completeness check (need sufficient data points)
+        if len(sparkline) < 8:
+            logger.debug(f"Skipping {term}: insufficient data ({len(sparkline)} weeks)")
+            return False
+        
+        # 3. Trend stability check (avoid extremely volatile data)
+        max_volatility = 50.0  # Maximum allowed volatility
+        if volatility > max_volatility:
+            logger.debug(f"Skipping {term}: too volatile ({volatility:.1f} > {max_volatility})")
+            return False
+        
+        # 4. Recent activity check (ensure recent data isn't all zeros)
+        recent_weeks = sparkline[-4:]  # Last 4 weeks
+        if all(val == 0 for val in recent_weeks):
+            logger.debug(f"Skipping {term}: no recent activity")
+            return False
+        
+        # 5. Data consistency check (avoid data with too many zeros)
+        zero_ratio = sum(1 for val in sparkline if val == 0) / len(sparkline)
+        max_zero_ratio = 0.7  # Maximum 70% zeros allowed
+        if zero_ratio > max_zero_ratio:
+            logger.debug(f"Skipping {term}: too many zeros ({zero_ratio:.1%} > {max_zero_ratio:.1%})")
+            return False
+        
+        # 6. Minimum trend strength check (avoid completely flat trends)
+        if abs(slope) < 0.1 and abs(percent_change) < 5.0:
+            logger.debug(f"Skipping {term}: trend too weak (slope: {slope:.2f}, change: {percent_change:.1f}%)")
+            return False
+        
+        # 7. Outlier detection (check for suspicious spikes)
+        if len(sparkline) > 4:
+            recent_avg = np.mean(sparkline[-4:])
+            historical_avg = np.mean(sparkline[:-4])
+            if recent_avg > historical_avg * 10:  # 10x spike might be suspicious
+                logger.debug(f"Skipping {term}: suspicious spike detected")
+                return False
+        
+        logger.debug(f"✅ {term} passed all quality filters (volume: {median_volume:.1f}, volatility: {volatility:.1f})")
+        return True
+    
+    def _apply_final_filtering_and_capping(self, topics: List[Dict]) -> List[Dict]:
+        """Apply final filtering and intelligent capping to topics."""
+        if not topics:
+            return topics
+        
+        original_count = len(topics)
+        logger.info(f"Applying final filtering and capping to {original_count} topics")
+        
+        # 1. Remove topics with negative scores (not trending)
+        positive_score_topics = [t for t in topics if t['score'] > 0]
+        removed_negative = len(topics) - len(positive_score_topics)
+        if removed_negative > 0:
+            logger.info(f"Removed {removed_negative} topics with negative scores")
+        
+        # 2. Apply score-based quality threshold
+        if positive_score_topics:
+            scores = [t['score'] for t in positive_score_topics]
+            score_threshold = np.percentile(scores, 10)  # Keep top 90% by score
+            quality_topics = [t for t in positive_score_topics if t['score'] >= score_threshold]
+            removed_low_quality = len(positive_score_topics) - len(quality_topics)
+            if removed_low_quality > 0:
+                logger.info(f"Removed {removed_low_quality} low-quality topics (score < {score_threshold:.2f})")
+        else:
+            quality_topics = positive_score_topics
+        
+        # 3. Apply hard cap of 150 topics
+        max_topics = 150
+        if len(quality_topics) > max_topics:
+            capped_topics = quality_topics[:max_topics]
+            removed_by_cap = len(quality_topics) - len(capped_topics)
+            logger.info(f"Capped to {max_topics} topics (removed {removed_by_cap} lowest scoring)")
+        else:
+            capped_topics = quality_topics
+        
+        # 4. Ensure category diversity (optional - keep at least 1 topic per category if possible)
+        category_counts = {}
+        for topic in capped_topics:
+            category = topic['category']
+            category_counts[category] = category_counts.get(category, 0) + 1
+        
+        logger.info(f"Final topic distribution by category:")
+        for category, count in sorted(category_counts.items()):
+            logger.info(f"  {category}: {count} topics")
+        
+        # 5. Calculate final statistics
+        final_count = len(capped_topics)
+        total_removed = original_count - final_count
+        
+        if final_count > 0:
+            avg_score = np.mean([t['score'] for t in capped_topics])
+            min_score = min(t['score'] for t in capped_topics)
+            max_score = max(t['score'] for t in capped_topics)
+            
+            logger.info(f"Final filtering complete:")
+            logger.info(f"  Original: {original_count} topics")
+            logger.info(f"  Final: {final_count} topics")
+            logger.info(f"  Removed: {total_removed} topics")
+            logger.info(f"  Score range: {min_score:.2f} to {max_score:.2f} (avg: {avg_score:.2f})")
+        else:
+            logger.warning("No topics passed final filtering!")
+        
+        return capped_topics
+    
     def _process_category(self, category: str, terms: List[str]) -> List[Dict]:
         """Process all terms in a category and return scored topics."""
         logger.info(f"Processing category: {category} with {len(terms)} terms")
@@ -306,10 +420,8 @@ class TrendsDataPipeline:
             # Calculate score components
             slope, percent_change, volatility = self._calculate_score(sparkline)
             
-            # Check volume threshold
-            median_volume = np.median(sparkline[-8:])  # Last 8 weeks median
-            if median_volume < self.seeds_data['globalSettings']['minVolumeThreshold']:
-                logger.info(f"Skipping {term}: volume too low ({median_volume})")
+            # Enhanced volume and quality filtering
+            if not self._passes_quality_filters(term, sparkline, slope, percent_change, volatility):
                 continue
             
             # Get related queries
@@ -405,12 +517,27 @@ class TrendsDataPipeline:
             cleaned_topic = {k: v for k, v in topic.items() if k != 'debug'}
             cleaned_topics.append(cleaned_topic)
         return cleaned_topics
+    
+    def _optimize_sparklines(self, topics: List[Dict]) -> List[Dict]:
+        """Optimize sparkline data for performance and file size."""
+        for topic in topics:
+            sparkline = topic['sparkline']
+            
+            # If sparkline is too long, keep only the last 24 points for performance
+            if len(sparkline) > 24:
+                topic['sparkline'] = sparkline[-24:]
+                logger.debug(f"Trimmed sparkline for {topic['term']} from {len(sparkline)} to 24 points")
+        
+        return topics
 
     def _save_data(self, topics: List[Dict]):
         """Save topics to latest.json and create archive."""
         try:
+            # Optimize sparklines for performance
+            optimized_topics = self._optimize_sparklines(topics)
+            
             # Clean debug information
-            cleaned_topics = self._clean_debug_info(topics)
+            cleaned_topics = self._clean_debug_info(optimized_topics)
             
             # Create output data structure
             output_data = {
@@ -433,6 +560,17 @@ class TrendsDataPipeline:
                 json.dump(output_data, f, indent=2)
             
             logger.info(f"Created archive: {archive_path}")
+            
+            # Check file size and log warning if too large
+            file_size = os.path.getsize(self.latest_file)
+            file_size_kb = file_size / 1024
+            
+            if file_size_kb > 400:
+                logger.warning(f"Output file is large: {file_size_kb:.1f}KB (target: <400KB)")
+                if file_size_kb > 500:
+                    logger.error(f"File size exceeds 500KB! Consider reducing topic count or sparkline length.")
+            else:
+                logger.info(f"Output file size: {file_size_kb:.1f}KB")
             
             # Clean up old archives
             self._cleanup_archives()
@@ -467,10 +605,8 @@ class TrendsDataPipeline:
             # Sort by score (highest first)
             all_topics.sort(key=lambda x: x['score'], reverse=True)
             
-            # Cap at 150 topics
-            if len(all_topics) > 150:
-                all_topics = all_topics[:150]
-                logger.info(f"Capped topics to 150 (was {len(all_topics)})")
+            # Apply intelligent capping and filtering
+            all_topics = self._apply_final_filtering_and_capping(all_topics)
             
             # Save data
             self._save_data(all_topics)

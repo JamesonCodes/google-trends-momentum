@@ -195,3 +195,89 @@
 2025-09-25 22:27:08,896 - ERROR - Unexpected error for term blockchain: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
 2025-09-25 22:27:08,896 - INFO - Processing term: metaverse
 2025-09-25 22:27:08,896 - INFO - Rate limiting: sleeping for 13.2 seconds
+2025-09-25 22:27:22,086 - ERROR - Unexpected error for term metaverse: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:27:22,086 - INFO - Processing category: sustainability with 8 terms
+2025-09-25 22:27:22,086 - INFO - Processing term: solar panels
+2025-09-25 22:27:22,087 - INFO - Rate limiting: sleeping for 13.6 seconds
+2025-09-25 22:27:35,645 - ERROR - Unexpected error for term solar panels: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:27:35,645 - INFO - Processing term: electric vehicle
+2025-09-25 22:27:35,646 - INFO - Rate limiting: sleeping for 14.0 seconds
+2025-09-25 22:27:49,633 - ERROR - Unexpected error for term electric vehicle: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:27:49,634 - INFO - Processing term: renewable energy
+2025-09-25 22:27:49,634 - INFO - Rate limiting: sleeping for 14.8 seconds
+2025-09-25 22:28:04,392 - ERROR - Unexpected error for term renewable energy: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:28:04,395 - INFO - Processing term: sustainable living
+2025-09-25 22:28:04,395 - INFO - Rate limiting: sleeping for 12.2 seconds
+2025-09-25 22:28:16,599 - ERROR - Unexpected error for term sustainable living: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:28:16,600 - INFO - Processing term: zero waste
+2025-09-25 22:28:16,600 - INFO - Rate limiting: sleeping for 14.5 seconds
+2025-09-25 22:28:31,123 - ERROR - Unexpected error for term zero waste: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:28:31,132 - INFO - Processing term: carbon footprint
+2025-09-25 22:28:31,136 - INFO - Rate limiting: sleeping for 13.8 seconds
+2025-09-25 22:28:44,989 - ERROR - Unexpected error for term carbon footprint: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:28:44,989 - INFO - Processing term: green energy
+2025-09-25 22:28:44,989 - INFO - Rate limiting: sleeping for 14.4 seconds
+2025-09-25 22:28:59,399 - ERROR - Unexpected error for term green energy: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:28:59,403 - INFO - Processing term: eco friendly
+2025-09-25 22:28:59,405 - INFO - Rate limiting: sleeping for 14.6 seconds
+2025-09-25 22:29:07,282 - INFO - Applying final filtering and capping to 25 topics
+2025-09-25 22:29:07,282 - INFO - Removed 5 topics with negative scores
+2025-09-25 22:29:07,284 - INFO - Removed 2 low-quality topics (score < 0.20)
+2025-09-25 22:29:07,284 - INFO - Final topic distribution by category:
+2025-09-25 22:29:07,284 - INFO -   ai-tools: 5 topics
+2025-09-25 22:29:07,284 - INFO -   crypto: 3 topics
+2025-09-25 22:29:07,284 - INFO -   ecommerce: 10 topics
+2025-09-25 22:29:07,284 - INFO - Final filtering complete:
+2025-09-25 22:29:07,284 - INFO -   Original: 25 topics
+2025-09-25 22:29:07,284 - INFO -   Final: 18 topics
+2025-09-25 22:29:07,284 - INFO -   Removed: 7 topics
+2025-09-25 22:29:07,285 - INFO -   Score range: 0.20 to 12.00 (avg: 5.74)
+2025-09-25 22:29:07,450 - INFO - Applying final filtering and capping to 500 topics
+2025-09-25 22:29:07,450 - INFO - Removed 28 topics with negative scores
+2025-09-25 22:29:07,450 - INFO - Removed 48 low-quality topics (score < 1.90)
+2025-09-25 22:29:07,450 - INFO - Capped to 150 topics (removed 274 lowest scoring)
+2025-09-25 22:29:07,450 - INFO - Final topic distribution by category:
+2025-09-25 22:29:07,450 - INFO -   ai-tools: 33 topics
+2025-09-25 22:29:07,450 - INFO -   crypto: 23 topics
+2025-09-25 22:29:07,450 - INFO -   design-tools: 30 topics
+2025-09-25 22:29:07,450 - INFO -   ecommerce: 31 topics
+2025-09-25 22:29:07,450 - INFO -   fitness: 33 topics
+2025-09-25 22:29:07,450 - INFO - Final filtering complete:
+2025-09-25 22:29:07,450 - INFO -   Original: 500 topics
+2025-09-25 22:29:07,451 - INFO -   Final: 150 topics
+2025-09-25 22:29:07,451 - INFO -   Removed: 350 topics
+2025-09-25 22:29:07,451 - INFO -   Score range: 1.94 to 17.63 (avg: 5.89)
+2025-09-25 22:29:14,052 - ERROR - Unexpected error for term eco friendly: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:29:14,053 - INFO - Collected 0 topics before deduplication
+2025-09-25 22:29:14,053 - INFO - After deduplication: 0 topics
+2025-09-25 22:29:14,054 - INFO - Saved 0 topics to public/data/latest.json
+2025-09-25 22:29:14,054 - INFO - Created archive: public/data/archive/2025-09-25.json
+2025-09-25 22:29:14,054 - INFO - Pipeline completed successfully in 749.9 seconds
+2025-09-25 22:29:14,054 - INFO - Final topics: 0
+2025-09-25 22:29:42,676 - INFO - Applying final filtering and capping to 25 topics
+2025-09-25 22:29:42,677 - INFO - Removed 5 topics with negative scores
+2025-09-25 22:29:42,679 - INFO - Removed 2 low-quality topics (score < 0.20)
+2025-09-25 22:29:42,679 - INFO - Final topic distribution by category:
+2025-09-25 22:29:42,679 - INFO -   ai-tools: 5 topics
+2025-09-25 22:29:42,679 - INFO -   crypto: 3 topics
+2025-09-25 22:29:42,679 - INFO -   ecommerce: 10 topics
+2025-09-25 22:29:42,679 - INFO - Final filtering complete:
+2025-09-25 22:29:42,679 - INFO -   Original: 25 topics
+2025-09-25 22:29:42,679 - INFO -   Final: 18 topics
+2025-09-25 22:29:42,679 - INFO -   Removed: 7 topics
+2025-09-25 22:29:42,679 - INFO -   Score range: 0.20 to 12.00 (avg: 5.74)
+2025-09-25 22:29:42,842 - INFO - Applying final filtering and capping to 500 topics
+2025-09-25 22:29:42,842 - INFO - Removed 18 topics with negative scores
+2025-09-25 22:29:42,842 - INFO - Removed 49 low-quality topics (score < 1.86)
+2025-09-25 22:29:42,842 - INFO - Capped to 150 topics (removed 283 lowest scoring)
+2025-09-25 22:29:42,842 - INFO - Final topic distribution by category:
+2025-09-25 22:29:42,843 - INFO -   ai-tools: 32 topics
+2025-09-25 22:29:42,843 - INFO -   crypto: 28 topics
+2025-09-25 22:29:42,843 - INFO -   design-tools: 30 topics
+2025-09-25 22:29:42,843 - INFO -   ecommerce: 28 topics
+2025-09-25 22:29:42,843 - INFO -   fitness: 32 topics
+2025-09-25 22:29:42,843 - INFO - Final filtering complete:
+2025-09-25 22:29:42,843 - INFO -   Original: 500 topics
+2025-09-25 22:29:42,843 - INFO -   Final: 150 topics
+2025-09-25 22:29:42,843 - INFO -   Removed: 350 topics
+2025-09-25 22:29:42,843 - INFO -   Score range: 1.96 to 12.02 (avg: 5.74)
