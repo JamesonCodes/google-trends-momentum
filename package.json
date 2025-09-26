@@ -1,14 +1,33 @@
 {
   "name": "rising-topics",
   "version": "0.1.0",
+  "description": "A modern web application for discovering trending and rising topics across various categories",
+  "keywords": ["trending", "topics", "google-trends", "nextjs", "typescript", "data-visualization", "ai", "business", "tech"],
+  "author": "Jameson Campbell",
+  "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesonCodes/google-trends-momentum.git"
+  },
+  "homepage": "https://github.com/JamesonCodes/google-trends-momentum#readme",
+  "bugs": {
+    "url": "https://github.com/JamesonCodes/google-trends-momentum/issues"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "python tests/run_tests.py",
-    "test:mvp": "python tests/test_mvp_functionality.py"
+    "test:mvp": "python tests/test_mvp_functionality.py",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
+    "security": "npm audit --audit-level moderate",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "react": "19.1.0",

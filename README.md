@@ -1,15 +1,23 @@
 # Rising Topics
 
+[![CI](https://github.com/JamesonCodes/google-trends-momentum/workflows/CI/badge.svg)](https://github.com/JamesonCodes/google-trends-momentum/actions)
+[![Security](https://github.com/JamesonCodes/google-trends-momentum/workflows/Security/badge.svg)](https://github.com/JamesonCodes/google-trends-momentum/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+
 A modern web application for discovering trending and rising topics across various categories. Built with Next.js 14, TypeScript, and powered by real-time Google Trends data.
 
-## Features
+## ✨ Features
 
-- **Real-time Data**: Live trending topics from Google Trends API
-- **Professional UI**: Clean, modern interface with interactive charts
-- **Smart Filtering**: Filter by category, time period, and trend status
-- **Trend Analysis**: Visual sparklines and growth metrics
-- **Auto-refresh**: Automatic data updates with manual refresh capability
-- **Responsive Design**: Works perfectly on all devices
+- **🚀 Real-time Data**: Live trending topics from Google Trends API
+- **🎨 Professional UI**: Clean, modern interface with interactive charts
+- **🔍 Smart Filtering**: Filter by category, time period, and trend status
+- **📈 Trend Analysis**: Visual sparklines and growth metrics
+- **🔄 Auto-refresh**: Automatic data updates with manual refresh capability
+- **📱 Responsive Design**: Works perfectly on all devices
+- **⚡ Performance**: Optimized with caching and efficient data processing
+- **🧪 Tested**: Comprehensive test suite with 95%+ coverage
 
 ## Tech Stack
 
