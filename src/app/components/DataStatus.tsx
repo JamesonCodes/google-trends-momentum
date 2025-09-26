@@ -21,7 +21,8 @@ export default function DataStatus({ lastUpdated, isStale, onRefresh, loading }:
       if (diffHours < 24) return `${diffHours}h ago`;
       
       return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-    } catch {
+    } catch (error) {
+      console.error('formatLastUpdated error:', error);
       return 'Unknown';
     }
   };
@@ -47,7 +48,7 @@ export default function DataStatus({ lastUpdated, isStale, onRefresh, loading }:
       
       <button
         onClick={() => {
-          console.log('DataStatus: Refresh button clicked');
+          console.log('DataStatus: Refresh button clicked at', new Date().toISOString());
           onRefresh();
         }}
         disabled={loading}

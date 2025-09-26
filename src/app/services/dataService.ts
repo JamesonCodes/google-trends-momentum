@@ -28,7 +28,7 @@ export class DataService {
 
     try {
       // Add cache-busting parameter for force refresh
-      const url = forceRefresh ? `${DATA_URL}?t=${now}` : DATA_URL;
+      const url = forceRefresh ? `${DATA_URL}?t=${now}&refresh=true` : DATA_URL;
       console.log(`Fetching data from: ${url}, forceRefresh: ${forceRefresh}`);
       
       const response = await fetch(url, {
