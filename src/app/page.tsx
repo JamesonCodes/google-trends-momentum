@@ -150,7 +150,15 @@ export default function Home() {
             <div className="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> of <span className="font-semibold text-gray-900 dark:text-white">{topics.length}</span> trending topics
+                {filters.category ? (
+                  <>
+                    Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> topics in <span className="font-semibold text-gray-900 dark:text-white">{filters.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+                  </>
+                ) : (
+                  <>
+                    Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> featured trending topics
+                  </>
+                )}
               </span>
             </div>
           </div>
