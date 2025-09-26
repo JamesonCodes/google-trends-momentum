@@ -491,24 +491,135 @@ class TrendsDataPipeline:
         return all_topics
     
     def _cleanup_archives(self):
-        """Keep only the last 7 days of archives."""
+        """Keep only the last 7 days of archives with date-based cleanup."""
         try:
-            archive_files = []
-            for filename in os.listdir(self.archive_dir):
-                if filename.endswith('.json'):
-                    filepath = os.path.join(self.archive_dir, filename)
-                    archive_files.append((filepath, os.path.getmtime(filepath)))
+            if not os.path.exists(self.archive_dir):
+                return
             
-            # Sort by modification time (newest first)
+            archive_files = []
+            current_date = datetime.now().date()
+            
+            # Collect all archive files with their dates
+            for filename in os.listdir(self.archive_dir):
+                if filename.endswith('.json') and filename != 'latest.json':
+                    filepath = os.path.join(self.archive_dir, filename)
+                    
+                    # Try to parse date from filename (YYYY-MM-DD.json)
+                    try:
+                        date_str = filename.replace('.json', '')
+                        file_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                        
+                        # Calculate days difference
+                        days_old = (current_date - file_date).days
+                        
+                        archive_files.append((filepath, file_date, days_old))
+                    except ValueError:
+                        # If filename doesn't match expected format, use file modification time
+                        mtime = os.path.getmtime(filepath)
+                        file_date = datetime.fromtimestamp(mtime).date()
+                        days_old = (current_date - file_date).days
+                        archive_files.append((filepath, file_date, days_old))
+            
+            # Sort by date (newest first)
             archive_files.sort(key=lambda x: x[1], reverse=True)
             
-            # Keep only the 7 most recent files
-            for filepath, _ in archive_files[7:]:
-                os.remove(filepath)
-                logger.info(f"Removed old archive: {filepath}")
+            # Remove files older than 7 days
+            removed_count = 0
+            for filepath, file_date, days_old in archive_files:
+                if days_old > 7:
+                    try:
+                        os.remove(filepath)
+                        logger.info(f"Removed old archive: {os.path.basename(filepath)} ({days_old} days old)")
+                        removed_count += 1
+                    except OSError as e:
+                        logger.warning(f"Could not remove archive {filepath}: {e}")
+            
+            # Log archive statistics
+            remaining_count = len(archive_files) - removed_count
+            logger.info(f"Archive cleanup complete: {removed_count} removed, {remaining_count} remaining")
+            
+            # List remaining archives
+            if remaining_count > 0:
+                logger.debug("Remaining archives:")
+                for filepath, file_date, days_old in archive_files[:remaining_count]:
+                    logger.debug(f"  {os.path.basename(filepath)} ({days_old} days old)")
                 
         except Exception as e:
             logger.error(f"Error cleaning up archives: {e}")
+    
+    def _validate_archive(self, filepath: str) -> bool:
+        """Validate that an archive file is properly formatted."""
+        try:
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+            
+            # Check required fields
+            required_fields = ['generatedAt', 'totalTopics', 'topics']
+            if not all(field in data for field in required_fields):
+                logger.warning(f"Archive {filepath} missing required fields")
+                return False
+            
+            # Check topics structure
+            if not isinstance(data['topics'], list):
+                logger.warning(f"Archive {filepath} has invalid topics structure")
+                return False
+            
+            # Check topic structure (at least one topic should have required fields)
+            if data['topics']:
+                topic = data['topics'][0]
+                topic_required_fields = ['term', 'category', 'score', 'sparkline']
+                if not all(field in topic for field in topic_required_fields):
+                    logger.warning(f"Archive {filepath} has invalid topic structure")
+                    return False
+            
+            return True
+            
+        except (json.JSONDecodeError, IOError) as e:
+            logger.warning(f"Archive {filepath} is corrupted: {e}")
+            return False
+    
+    def _get_archive_statistics(self) -> Dict:
+        """Get statistics about the archive system."""
+        try:
+            if not os.path.exists(self.archive_dir):
+                return {'total_archives': 0, 'total_size_kb': 0, 'oldest_date': None, 'newest_date': None}
+            
+            archive_files = []
+            total_size = 0
+            
+            for filename in os.listdir(self.archive_dir):
+                if filename.endswith('.json') and filename != 'latest.json':
+                    filepath = os.path.join(self.archive_dir, filename)
+                    file_size = os.path.getsize(filepath)
+                    total_size += file_size
+                    
+                    try:
+                        date_str = filename.replace('.json', '')
+                        file_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                        archive_files.append((filepath, file_date, file_size))
+                    except ValueError:
+                        # Use modification time if filename doesn't match format
+                        mtime = os.path.getmtime(filepath)
+                        file_date = datetime.fromtimestamp(mtime).date()
+                        archive_files.append((filepath, file_date, file_size))
+            
+            if not archive_files:
+                return {'total_archives': 0, 'total_size_kb': 0, 'oldest_date': None, 'newest_date': None}
+            
+            # Sort by date
+            archive_files.sort(key=lambda x: x[1])
+            
+            return {
+                'total_archives': len(archive_files),
+                'total_size_kb': round(total_size / 1024, 1),
+                'oldest_date': archive_files[0][1].isoformat(),
+                'newest_date': archive_files[-1][1].isoformat(),
+                'files': [os.path.basename(f[0]) for f in archive_files]
+            }
+            
+        except Exception as e:
+            logger.error(f"Error getting archive statistics: {e}")
+            return {'error': str(e)}
     
     def _clean_debug_info(self, topics: List[Dict]) -> List[Dict]:
         """Remove debug information from topics before saving."""
@@ -552,14 +663,34 @@ class TrendsDataPipeline:
             
             logger.info(f"Saved {len(topics)} topics to {self.latest_file}")
             
-            # Create archive
+            # Create archive with validation
             archive_filename = f"{datetime.now().strftime('%Y-%m-%d')}.json"
             archive_path = os.path.join(self.archive_dir, archive_filename)
+            
+            # Check if archive already exists for today
+            if os.path.exists(archive_path):
+                logger.warning(f"Archive for today already exists: {archive_filename}")
+                # Create backup with timestamp
+                timestamp = datetime.now().strftime('%H%M%S')
+                backup_filename = f"{datetime.now().strftime('%Y-%m-%d')}_{timestamp}.json"
+                backup_path = os.path.join(self.archive_dir, backup_filename)
+                archive_path = backup_path
+                archive_filename = backup_filename
             
             with open(archive_path, 'w') as f:
                 json.dump(output_data, f, indent=2)
             
-            logger.info(f"Created archive: {archive_path}")
+            # Validate the created archive
+            if self._validate_archive(archive_path):
+                logger.info(f"Created and validated archive: {archive_filename}")
+            else:
+                logger.error(f"Archive validation failed: {archive_filename}")
+                # Remove invalid archive
+                try:
+                    os.remove(archive_path)
+                    logger.info(f"Removed invalid archive: {archive_filename}")
+                except OSError:
+                    pass
             
             # Check file size and log warning if too large
             file_size = os.path.getsize(self.latest_file)
@@ -574,6 +705,13 @@ class TrendsDataPipeline:
             
             # Clean up old archives
             self._cleanup_archives()
+            
+            # Log archive statistics
+            archive_stats = self._get_archive_statistics()
+            if 'error' not in archive_stats:
+                logger.info(f"Archive system status: {archive_stats['total_archives']} files, "
+                          f"{archive_stats['total_size_kb']}KB total, "
+                          f"range: {archive_stats['oldest_date']} to {archive_stats['newest_date']}")
             
         except Exception as e:
             logger.error(f"Error saving data: {e}")

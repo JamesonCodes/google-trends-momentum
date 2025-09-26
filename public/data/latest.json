@@ -1,5 +1,87 @@
 {
-  "generatedAt": "2025-09-25T22:29:14.053506",
-  "totalTopics": 0,
-  "topics": []
+  "generatedAt": "2025-09-25T22:33:23.152916",
+  "totalTopics": 3,
+  "topics": [
+    {
+      "term": "duplicate_topic_0",
+      "category": "ai-tools",
+      "score": 3.0,
+      "percentChange": 54.15845689180314,
+      "sparkline": [
+        33,
+        42,
+        71,
+        57,
+        44,
+        74,
+        77,
+        34,
+        47,
+        71,
+        98,
+        43
+      ],
+      "firstSeen": "2024-01-01T00:00:00",
+      "lastSeen": "2024-01-15T00:00:00",
+      "volume": 59,
+      "relatedQueries": [
+        "related1",
+        "related2"
+      ]
+    },
+    {
+      "term": "duplicate_topic_1",
+      "category": "ai-tools",
+      "score": 4.0,
+      "percentChange": -9.57533503945795,
+      "sparkline": [
+        82,
+        41,
+        33,
+        43,
+        55,
+        40,
+        34,
+        65,
+        57,
+        33,
+        43,
+        62
+      ],
+      "firstSeen": "2024-01-01T00:00:00",
+      "lastSeen": "2024-01-15T00:00:00",
+      "volume": 49,
+      "relatedQueries": [
+        "related1",
+        "related2"
+      ]
+    },
+    {
+      "term": "duplicate_topic_2",
+      "category": "ai-tools",
+      "score": 5.0,
+      "percentChange": 56.743170540817204,
+      "sparkline": [
+        50,
+        46,
+        37,
+        57,
+        34,
+        15,
+        46,
+        19,
+        51,
+        41,
+        61,
+        71
+      ],
+      "firstSeen": "2024-01-01T00:00:00",
+      "lastSeen": "2024-01-15T00:00:00",
+      "volume": 43,
+      "relatedQueries": [
+        "related1",
+        "related2"
+      ]
+    }
+  ]
 }
