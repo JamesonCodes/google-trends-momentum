@@ -21,18 +21,25 @@ export default function Filters({ filters, onFiltersChange, categories }: Filter
       {/* Category Filter */}
       <div className="flex items-center gap-3">
         <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Filter by:</span>
-        <select
-          value={filters.category}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors min-w-[140px]"
-        >
-          <option value="">All Categories</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select
+            value={filters.category}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className="px-4 py-2 pr-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors min-w-[160px] appearance-none cursor-pointer"
+          >
+            <option value="">All Categories</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+              </option>
+            ))}
+          </select>
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
       </div>
 
       {/* Sort Options */}
