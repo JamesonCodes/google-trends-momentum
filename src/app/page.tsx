@@ -82,12 +82,12 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            Exploding Topics
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Discover Current Trends
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Discover trending topics across categories
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Uncover the most explosive and trending topics across all categories with real-time data and insights
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
 
         {/* Topics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {filteredAndSortedTopics.map((topic, index) => (
             <TopicCard key={`${topic.term}-${index}`} topic={topic} />
           ))}
