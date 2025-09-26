@@ -50,6 +50,8 @@ describe('DataService', () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'default',
+        'Pragma': 'default',
       },
       cache: 'default',
     });
@@ -191,13 +193,18 @@ describe('DataService', () => {
 
     // Set up cache with old timestamp
     mockNow.mockReturnValue(1000);
+    dataService['cache'] = {
+      generatedAt: '2024-01-01T00:00:00.000Z',
+      totalTopics: 1,
+      topics: []
+    };
     dataService['lastFetch'] = 1000;
 
-    // Check if data is stale after cache duration
+    // Check if data is stale after cache duration (5 minutes)
     mockNow.mockReturnValue(1000 + 6 * 60 * 1000); // 6 minutes later
     expect(dataService.isDataStale()).toBe(true);
 
-    // Check if data is fresh within cache duration
+    // Check if data is fresh within cache duration (5 minutes)
     mockNow.mockReturnValue(1000 + 2 * 60 * 1000); // 2 minutes later
     expect(dataService.isDataStale()).toBe(false);
 
