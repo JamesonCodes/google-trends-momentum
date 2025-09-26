@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "python tests/run_tests.py",
+    "test:mvp": "python tests/test_mvp_functionality.py"
   },
   "dependencies": {
     "react": "19.1.0",

@@ -34,7 +34,31 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
+
+Run the test suite:
+
+```bash
+# Run all tests
+npm run test
+
+# Run MVP functionality tests only
+npm run test:mvp
+
+# Run specific test
+python tests/test_mvp_functionality.py
+```
+
+## Project Structure
+
+```
+rising-topics/
+├── src/app/           # Next.js app directory
+├── scripts/           # Build and utility scripts
+├── tests/             # Test suite
+├── public/data/       # Generated data files
+└── data/              # Seed data and configuration
+```
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
