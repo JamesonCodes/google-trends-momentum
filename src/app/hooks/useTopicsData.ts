@@ -12,12 +12,15 @@ export function useTopicsData() {
     error: null,
     lastUpdated: null,
   });
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const fetchData = useCallback(async (forceRefresh: boolean = false) => {
     try {
+      console.log('useTopicsData: Starting fetch, forceRefresh:', forceRefresh);
       setDataState(prev => ({ ...prev, loading: true, error: null }));
       
       const response = await dataService.fetchTopics(forceRefresh);
+      console.log('useTopicsData: Received response:', response);
       const categories = dataService.getCategories(response.topics);
       
       setDataState({
@@ -27,6 +30,7 @@ export function useTopicsData() {
         error: null,
         lastUpdated: response.generatedAt,
       });
+      console.log('useTopicsData: State updated with', response.topics.length, 'topics');
     } catch (error) {
       console.error('Error fetching topics data:', error);
       setDataState(prev => ({
@@ -37,8 +41,10 @@ export function useTopicsData() {
     }
   }, []);
 
-  const refreshData = useCallback(() => {
-    return fetchData(true);
+  const refreshData = useCallback(async () => {
+    console.log('useTopicsData: refreshData called');
+    setRefreshKey(prev => prev + 1); // Force re-render
+    await fetchData(true);
   }, [fetchData]);
 
   // Initial data fetch
@@ -65,5 +71,6 @@ export function useTopicsData() {
     ...dataState,
     refreshData,
     isStale: dataService.isDataStale(),
+    refreshKey, // Include refresh key to force re-renders
   };
 }

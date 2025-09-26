@@ -38,10 +38,18 @@ export default function DataStatus({ lastUpdated, isStale, onRefresh, loading }:
             (Stale)
           </span>
         )}
+        {loading && (
+          <span className="text-xs text-blue-600 dark:text-blue-400">
+            (Refreshing...)
+          </span>
+        )}
       </div>
       
       <button
-        onClick={onRefresh}
+        onClick={() => {
+          console.log('DataStatus: Refresh button clicked');
+          onRefresh();
+        }}
         disabled={loading}
         className="flex items-center space-x-1 px-3 py-1 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >

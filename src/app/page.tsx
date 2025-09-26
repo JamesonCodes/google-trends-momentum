@@ -8,6 +8,7 @@ import Filters from './components/Filters';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorDisplay from './components/ErrorDisplay';
 import DataStatus from './components/DataStatus';
+import DebugInfo from './components/DebugInfo';
 
 export default function Home() {
   const [filters, setFilters] = useState<FilterState>({
@@ -17,7 +18,7 @@ export default function Home() {
   });
 
   // Fetch real data
-  const { topics, categories, loading, error, lastUpdated, isStale, refreshData } = useTopicsData();
+  const { topics, categories, loading, error, lastUpdated, isStale, refreshData, refreshKey } = useTopicsData();
 
   // Filter and sort topics
   const filteredAndSortedTopics = useMemo(() => {
@@ -135,6 +136,15 @@ export default function Home() {
             </p>
           </div>
         )}
+        
+        {/* Debug Info (only in development) */}
+        <DebugInfo 
+          topics={topics}
+          lastUpdated={lastUpdated}
+          loading={loading}
+          error={error}
+          refreshKey={refreshKey}
+        />
       </div>
     </div>
   );

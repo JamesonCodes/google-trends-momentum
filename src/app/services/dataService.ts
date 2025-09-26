@@ -22,16 +22,22 @@ export class DataService {
     
     // Return cached data if it's still fresh and not forcing refresh
     if (!forceRefresh && this.cache && (now - this.lastFetch) < this.CACHE_DURATION) {
+      console.log('Returning cached data');
       return this.cache;
     }
 
     try {
-      const response = await fetch(DATA_URL, {
+      // Add cache-busting parameter for force refresh
+      const url = forceRefresh ? `${DATA_URL}?t=${now}` : DATA_URL;
+      console.log(`Fetching data from: ${url}, forceRefresh: ${forceRefresh}`);
+      
+      const response = await fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': forceRefresh ? 'no-cache, no-store, must-revalidate' : 'default',
+          'Pragma': forceRefresh ? 'no-cache' : 'default',
         },
-        // Add cache control for development
         cache: forceRefresh ? 'no-cache' : 'default',
       });
 
@@ -40,6 +46,7 @@ export class DataService {
       }
 
       const data: TopicsResponse = await response.json();
+      console.log('Fetched data:', data);
       
       // Validate data structure
       if (!data.topics || !Array.isArray(data.topics)) {
@@ -49,6 +56,7 @@ export class DataService {
       // Cache the data
       this.cache = data;
       this.lastFetch = now;
+      console.log('Data cached successfully');
 
       return data;
     } catch (error) {

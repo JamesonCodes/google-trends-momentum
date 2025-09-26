@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Refresh Functionality</title>
+</head>
+<body>
+    <h1>Test Refresh Functionality</h1>
+    <button id="refreshBtn">Test Refresh</button>
+    <div id="output"></div>
+
+    <script>
+        const DATA_URL = '/data/latest.json';
+        
+        async function testRefresh() {
+            const output = document.getElementById('output');
+            output.innerHTML = 'Testing refresh...';
+            
+            try {
+                const timestamp = Date.now();
+                const url = `${DATA_URL}?t=${timestamp}`;
+                console.log('Fetching from:', url);
+                
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                    },
+                    cache: 'no-cache',
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log('Received data:', data);
+                
+                output.innerHTML = `
+                    <h3>Success!</h3>
+                    <p>Generated at: ${data.generatedAt}</p>
+                    <p>Total topics: ${data.totalTopics}</p>
+                    <p>Topics: ${JSON.stringify(data.topics, null, 2)}</p>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                output.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+        
+        document.getElementById('refreshBtn').addEventListener('click', testRefresh);
+        
+        // Test on page load
+        testRefresh();
+    </script>
+</body>
+</html>
