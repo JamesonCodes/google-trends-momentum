@@ -7,6 +7,20 @@ interface FiltersProps {
 }
 
 export default function Filters({ filters, onFiltersChange, categories }: FiltersProps) {
+  const getCategoryDisplayName = (category: string) => {
+    const displayNames: { [key: string]: string } = {
+      'ai-tech': 'AI & Tech',
+      'business-finance': 'Business & Finance',
+      'lifestyle-beauty': 'Lifestyle & Beauty',
+      'science-health': 'Science & Health',
+      'creative-design': 'Creative & Design',
+      'gaming-entertainment': 'Gaming & Entertainment',
+      'food-travel': 'Food & Travel',
+      'fitness-sports': 'Fitness & Sports'
+    };
+    return displayNames[category] || category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
+
   const handleCategoryChange = (category: string) => {
     onFiltersChange({ ...filters, category });
   };
@@ -30,7 +44,7 @@ export default function Filters({ filters, onFiltersChange, categories }: Filter
             <option value="">Featured</option>
             {categories.map((category) => (
               <option key={category} value={category}>
-                {category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                {getCategoryDisplayName(category)}
               </option>
             ))}
           </select>

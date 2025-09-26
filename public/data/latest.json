@@ -1,286 +1,710 @@
 {
-  "generatedAt": "2025-09-26T12:34:03.714161+00:00",
-  "totalTopics": 12,
+  "generatedAt": "2025-09-26T12:46:02.579506+00:00",
+  "totalTopics": 30,
   "topics": [
     {
-      "term": "ChatGPT-5",
-      "category": "ai-tools",
+      "term": "Claude 3.5 Sonnet",
+      "category": "ai-tech",
       "score": 10,
-      "percentChange": 436,
+      "percentChange": 426,
       "sparkline": [
-        21,
-        17,
-        30,
-        27,
-        25,
-        30,
-        44,
-        66
+        36,
+        37,
+        32,
+        34,
+        35,
+        31,
+        33,
+        53
       ],
-      "firstSeen": "2025-01-07T07:03:21.433781",
-      "lastSeen": "2025-09-26T07:03:21.433785",
-      "volume": 7876,
+      "firstSeen": "2025-03-29T12:46:02.578286+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578494+00:00",
+      "volume": 35178,
       "relatedQueries": [
-        "Smart tools",
-        "Artificial intelligence"
-      ]
-    },
-    {
-      "term": "Notion AI",
-      "category": "ai-tools",
-      "score": 10,
-      "percentChange": 392,
-      "sparkline": [
-        40,
-        52,
-        49,
-        54,
-        66,
-        69,
-        74,
-        83
-      ],
-      "firstSeen": "2023-11-16T07:03:21.433802",
-      "lastSeen": "2025-09-26T07:03:21.433805",
-      "volume": 47044,
-      "relatedQueries": [
-        "Artificial intelligence",
+        "Machine learning",
         "AI automation"
       ]
     },
     {
-      "term": "Google Pixel 8",
-      "category": "tech",
+      "term": "Anthropic Claude",
+      "category": "ai-tech",
       "score": 10,
-      "percentChange": 302,
+      "percentChange": 576,
       "sparkline": [
-        18,
-        18,
-        13,
-        16,
-        11,
-        11,
-        12,
-        29
-      ],
-      "firstSeen": "2024-05-22T07:03:21.433824",
-      "lastSeen": "2025-09-26T07:03:21.433827",
-      "volume": 21341,
-      "relatedQueries": [
-        "Tech news",
-        "Digital transformation",
-        "Future tech"
-      ]
-    },
-    {
-      "term": "Gig Economy",
-      "category": "business",
-      "score": 10,
-      "percentChange": 414,
-      "sparkline": [
-        18,
-        20,
-        30,
-        43,
-        48,
-        53,
+        42,
+        55,
         60,
-        84
+        67,
+        78,
+        93,
+        94,
+        122
       ],
-      "firstSeen": "2024-06-22T07:03:21.433867",
-      "lastSeen": "2025-09-26T07:03:21.433870",
-      "volume": 44836,
+      "firstSeen": "2023-12-24T12:46:02.578521+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578526+00:00",
+      "volume": 8089,
       "relatedQueries": [
-        "Industry news",
-        "Entrepreneurship"
-      ]
-    },
-    {
-      "term": "Meta Quest 3",
-      "category": "tech",
-      "score": 9.7,
-      "percentChange": 350,
-      "sparkline": [
-        37,
-        50,
-        62,
-        60,
-        56,
-        57,
-        54,
-        78
-      ],
-      "firstSeen": "2024-02-14T07:03:21.433842",
-      "lastSeen": "2025-09-26T07:03:21.433845",
-      "volume": 28136,
-      "relatedQueries": [
-        "Technology trends",
-        "Tech news",
-        "Tech reviews"
-      ]
-    },
-    {
-      "term": "Mars Exploration",
-      "category": "science",
-      "score": 9.5,
-      "percentChange": 248,
-      "sparkline": [
-        24,
-        23,
-        30,
-        25,
-        21,
-        32,
-        47,
-        73
-      ],
-      "firstSeen": "2024-02-18T07:03:21.433944",
-      "lastSeen": "2025-09-26T07:03:21.433947",
-      "volume": 33614,
-      "relatedQueries": [
-        "Scientific research",
-        "Research findings"
-      ]
-    },
-    {
-      "term": "Runway ML",
-      "category": "ai-tools",
-      "score": 9.3,
-      "percentChange": 293,
-      "sparkline": [
-        17,
-        18,
-        26,
-        21,
-        22,
-        37,
-        36,
-        54
-      ],
-      "firstSeen": "2024-07-31T07:03:21.433304",
-      "lastSeen": "2025-09-26T07:03:21.433330",
-      "volume": 45877,
-      "relatedQueries": [
+        "AI automation",
         "Machine learning",
         "Smart tools"
       ]
     },
     {
-      "term": "Jasper AI",
-      "category": "ai-tools",
-      "score": 7.9,
-      "percentChange": 243,
+      "term": "ChatGPT Plus",
+      "category": "ai-tech",
+      "score": 10,
+      "percentChange": 532,
       "sparkline": [
-        32,
-        35,
-        34,
-        33,
-        34,
-        29,
-        35,
-        44
+        38,
+        43,
+        44,
+        53,
+        58,
+        69,
+        73,
+        98
       ],
-      "firstSeen": "2024-10-03T07:03:21.433754",
-      "lastSeen": "2025-09-26T07:03:21.433760",
-      "volume": 5831,
+      "firstSeen": "2023-12-12T12:46:02.578546+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578550+00:00",
+      "volume": 2400,
+      "relatedQueries": [
+        "Tech innovation",
+        "Smart tools"
+      ]
+    },
+    {
+      "term": "Stable Diffusion 3",
+      "category": "ai-tech",
+      "score": 10,
+      "percentChange": 639,
+      "sparkline": [
+        23,
+        33,
+        42,
+        45,
+        50,
+        55,
+        55,
+        62
+      ],
+      "firstSeen": "2024-01-09T12:46:02.578566+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578570+00:00",
+      "volume": 94842,
       "relatedQueries": [
         "AI assistance",
-        "AI productivity"
+        "Artificial intelligence",
+        "Tech innovation"
       ]
     },
     {
-      "term": "James Webb Telescope",
-      "category": "science",
-      "score": 7.2,
-      "percentChange": 176,
+      "term": "Cryptocurrency",
+      "category": "business-finance",
+      "score": 10,
+      "percentChange": 439,
       "sparkline": [
-        35,
         37,
-        32,
-        42,
-        57,
-        56,
-        69,
-        88
+        51,
+        66,
+        81,
+        85,
+        80,
+        93,
+        106
       ],
-      "firstSeen": "2024-10-10T07:03:21.433962",
-      "lastSeen": "2025-09-26T07:03:21.433965",
-      "volume": 21299,
-      "relatedQueries": [
-        "Technology breakthrough",
-        "Scientific research",
-        "Research findings"
-      ]
-    },
-    {
-      "term": "Freelance Economy",
-      "category": "business",
-      "score": 6.4,
-      "percentChange": 68,
-      "sparkline": [
-        11,
-        11,
-        14,
-        14,
-        14,
-        17,
-        32,
-        54
-      ],
-      "firstSeen": "2024-09-30T07:03:21.433884",
-      "lastSeen": "2025-09-26T07:03:21.433887",
-      "volume": 39307,
+      "firstSeen": "2024-04-25T12:46:02.578590+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578594+00:00",
+      "volume": 82026,
       "relatedQueries": [
         "Business growth",
-        "Business innovation"
+        "Finance tech",
+        "Market trends"
       ]
     },
     {
-      "term": "Machine Learning",
-      "category": "science",
-      "score": 6.3,
-      "percentChange": 149,
+      "term": "Business Automation",
+      "category": "business-finance",
+      "score": 10,
+      "percentChange": 685,
       "sparkline": [
-        16,
-        28,
-        23,
-        29,
+        14,
+        9,
+        15,
         26,
-        21,
-        18,
-        40
+        32,
+        35,
+        49,
+        63
       ],
-      "firstSeen": "2024-11-14T07:03:21.433924",
-      "lastSeen": "2025-09-26T07:03:21.433926",
-      "volume": 7932,
+      "firstSeen": "2025-01-19T12:46:02.578610+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578614+00:00",
+      "volume": 31495,
       "relatedQueries": [
-        "Scientific discovery",
-        "Scientific research",
-        "Innovation"
+        "Market trends",
+        "Entrepreneurship",
+        "Business strategy"
       ]
     },
     {
-      "term": "Wind Energy",
-      "category": "science",
-      "score": 4.0,
-      "percentChange": 46,
+      "term": "Web3",
+      "category": "business-finance",
+      "score": 10,
+      "percentChange": 500,
       "sparkline": [
-        39,
-        49,
-        54,
-        69,
-        69,
-        83,
-        82,
-        107
+        33,
+        45,
+        46,
+        57,
+        65,
+        80,
+        87,
+        119
       ],
-      "firstSeen": "2024-09-12T07:03:21.433905",
-      "lastSeen": "2025-09-26T07:03:21.433908",
-      "volume": 36386,
+      "firstSeen": "2024-04-09T12:46:02.578629+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578632+00:00",
+      "volume": 31923,
       "relatedQueries": [
-        "Tech advancement",
+        "Industry news",
+        "Finance tech",
+        "Market trends"
+      ]
+    },
+    {
+      "term": "E-commerce Growth",
+      "category": "business-finance",
+      "score": 10,
+      "percentChange": 459,
+      "sparkline": [
+        20,
+        24,
+        21,
+        33,
+        45,
+        59,
+        56,
+        74
+      ],
+      "firstSeen": "2025-02-09T12:46:02.578647+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578650+00:00",
+      "volume": 72178,
+      "relatedQueries": [
+        "Market trends",
+        "Finance tech"
+      ]
+    },
+    {
+      "term": "Self-Care",
+      "category": "lifestyle-beauty",
+      "score": 10,
+      "percentChange": 630,
+      "sparkline": [
+        45,
+        54,
+        58,
+        53,
+        66,
+        77,
+        78,
+        108
+      ],
+      "firstSeen": "2023-10-19T12:46:02.579092+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579097+00:00",
+      "volume": 89742,
+      "relatedQueries": [
+        "Wellness",
+        "Lifestyle brands",
+        "Beauty products"
+      ]
+    },
+    {
+      "term": "Clean Beauty",
+      "category": "lifestyle-beauty",
+      "score": 10,
+      "percentChange": 650,
+      "sparkline": [
+        41,
+        54,
+        60,
+        64,
+        65,
+        67,
+        79,
+        95
+      ],
+      "firstSeen": "2024-03-28T12:46:02.579113+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579117+00:00",
+      "volume": 87778,
+      "relatedQueries": [
+        "Health trends",
+        "Beauty products"
+      ]
+    },
+    {
+      "term": "Healthy Eating",
+      "category": "lifestyle-beauty",
+      "score": 10,
+      "percentChange": 785,
+      "sparkline": [
+        46,
+        45,
+        57,
+        56,
+        66,
+        81,
+        94,
+        112
+      ],
+      "firstSeen": "2024-05-31T12:46:02.579134+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579138+00:00",
+      "volume": 87648,
+      "relatedQueries": [
+        "Lifestyle brands",
+        "Health trends",
+        "Self-care"
+      ]
+    },
+    {
+      "term": "Renewable Energy",
+      "category": "science-health",
+      "score": 10,
+      "percentChange": 439,
+      "sparkline": [
+        29,
+        44,
+        52,
+        61,
+        60,
+        63,
+        58,
+        87
+      ],
+      "firstSeen": "2023-12-14T12:46:02.579157+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579161+00:00",
+      "volume": 71056,
+      "relatedQueries": [
         "Scientific discovery",
         "Technology breakthrough"
+      ]
+    },
+    {
+      "term": "Medical AI",
+      "category": "science-health",
+      "score": 10,
+      "percentChange": 543,
+      "sparkline": [
+        12,
+        23,
+        34,
+        43,
+        52,
+        56,
+        51,
+        76
+      ],
+      "firstSeen": "2025-02-08T12:46:02.579175+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579178+00:00",
+      "volume": 29053,
+      "relatedQueries": [
+        "Research findings",
+        "Scientific research"
+      ]
+    },
+    {
+      "term": "Quantum Computing",
+      "category": "science-health",
+      "score": 10,
+      "percentChange": 735,
+      "sparkline": [
+        44,
+        39,
+        38,
+        41,
+        44,
+        49,
+        51,
+        71
+      ],
+      "firstSeen": "2023-10-04T12:46:02.579193+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579196+00:00",
+      "volume": 71678,
+      "relatedQueries": [
+        "Scientific discovery",
+        "Health tech",
+        "Tech advancement"
+      ]
+    },
+    {
+      "term": "Figma",
+      "category": "creative-design",
+      "score": 10,
+      "percentChange": 673,
+      "sparkline": [
+        46,
+        56,
+        65,
+        79,
+        84,
+        89,
+        101,
+        108
+      ],
+      "firstSeen": "2023-12-02T12:46:02.579251+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579254+00:00",
+      "volume": 44818,
+      "relatedQueries": [
+        "Design trends",
+        "Design inspiration",
+        "Creative skills"
+      ]
+    },
+    {
+      "term": "Logo Design",
+      "category": "creative-design",
+      "score": 10,
+      "percentChange": 636,
+      "sparkline": [
+        41,
+        38,
+        40,
+        44,
+        56,
+        60,
+        72,
+        88
+      ],
+      "firstSeen": "2024-06-28T12:46:02.579269+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579273+00:00",
+      "volume": 34338,
+      "relatedQueries": [
+        "Creative tools",
+        "Creative process"
+      ]
+    },
+    {
+      "term": "Gaming Culture",
+      "category": "gaming-entertainment",
+      "score": 10,
+      "percentChange": 761,
+      "sparkline": [
+        43,
+        46,
+        61,
+        71,
+        74,
+        75,
+        87,
+        107
+      ],
+      "firstSeen": "2024-10-09T12:46:02.579313+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579316+00:00",
+      "volume": 87582,
+      "relatedQueries": [
+        "Entertainment trends",
+        "Streaming"
+      ]
+    },
+    {
+      "term": "Food Tourism",
+      "category": "food-travel",
+      "score": 10,
+      "percentChange": 483,
+      "sparkline": [
+        28,
+        26,
+        36,
+        44,
+        51,
+        51,
+        51,
+        69
+      ],
+      "firstSeen": "2024-10-09T12:46:02.579390+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579393+00:00",
+      "volume": 52387,
+      "relatedQueries": [
+        "Culinary arts",
+        "Travel tech",
+        "Food culture"
+      ]
+    },
+    {
+      "term": "Home Workouts",
+      "category": "fitness-sports",
+      "score": 10,
+      "percentChange": 626,
+      "sparkline": [
+        29,
+        25,
+        36,
+        35,
+        44,
+        39,
+        46,
+        59
+      ],
+      "firstSeen": "2023-12-30T12:46:02.579431+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579434+00:00",
+      "volume": 3454,
+      "relatedQueries": [
+        "Fitness trends",
+        "Fitness community"
+      ]
+    },
+    {
+      "term": "Gym Tech",
+      "category": "fitness-sports",
+      "score": 10,
+      "percentChange": 256,
+      "sparkline": [
+        10,
+        23,
+        36,
+        38,
+        37,
+        38,
+        48,
+        80
+      ],
+      "firstSeen": "2024-07-01T12:46:02.579467+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579470+00:00",
+      "volume": 32887,
+      "relatedQueries": [
+        "Fitness community",
+        "Fitness trends",
+        "Athletic performance"
+      ]
+    },
+    {
+      "term": "Individual Sports",
+      "category": "fitness-sports",
+      "score": 10,
+      "percentChange": 497,
+      "sparkline": [
+        43,
+        53,
+        53,
+        64,
+        66,
+        77,
+        90,
+        100
+      ],
+      "firstSeen": "2023-10-18T12:46:02.579486+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579489+00:00",
+      "volume": 90800,
+      "relatedQueries": [
+        "Athletic performance",
+        "Sports culture"
+      ]
+    },
+    {
+      "term": "Sports Science",
+      "category": "fitness-sports",
+      "score": 9.4,
+      "percentChange": 227,
+      "sparkline": [
+        22,
+        32,
+        34,
+        40,
+        41,
+        51,
+        64,
+        85
+      ],
+      "firstSeen": "2024-10-18T12:46:02.579449+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579452+00:00",
+      "volume": 42947,
+      "relatedQueries": [
+        "Fitness trends",
+        "Fitness apps",
+        "Fitness community"
+      ]
+    },
+    {
+      "term": "Design Thinking",
+      "category": "creative-design",
+      "score": 9.2,
+      "percentChange": 281,
+      "sparkline": [
+        29,
+        40,
+        38,
+        43,
+        45,
+        55,
+        63,
+        72
+      ],
+      "firstSeen": "2023-10-10T12:46:02.579214+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579217+00:00",
+      "volume": 99364,
+      "relatedQueries": [
+        "Design tools",
+        "Creative skills"
+      ]
+    },
+    {
+      "term": "Recovery",
+      "category": "fitness-sports",
+      "score": 9.0,
+      "percentChange": 277,
+      "sparkline": [
+        42,
+        51,
+        46,
+        45,
+        54,
+        52,
+        55,
+        89
+      ],
+      "firstSeen": "2024-12-17T12:46:02.579412+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579415+00:00",
+      "volume": 65750,
+      "relatedQueries": [
+        "Fitness community",
+        "Sports science"
+      ]
+    },
+    {
+      "term": "Skincare Routine",
+      "category": "lifestyle-beauty",
+      "score": 8.2,
+      "percentChange": 248,
+      "sparkline": [
+        29,
+        30,
+        40,
+        50,
+        60,
+        60,
+        55,
+        83
+      ],
+      "firstSeen": "2024-02-09T12:46:02.578668+00:00",
+      "lastSeen": "2025-09-26T12:46:02.578672+00:00",
+      "volume": 27232,
+      "relatedQueries": [
+        "Health trends",
+        "Lifestyle trends"
+      ]
+    },
+    {
+      "term": "Adobe Creative Suite",
+      "category": "creative-design",
+      "score": 7.4,
+      "percentChange": 227,
+      "sparkline": [
+        38,
+        40,
+        38,
+        33,
+        29,
+        39,
+        41,
+        56
+      ],
+      "firstSeen": "2025-01-25T12:46:02.579232+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579236+00:00",
+      "volume": 99702,
+      "relatedQueries": [
+        "Creative process",
+        "Design tools",
+        "Design inspiration"
+      ]
+    },
+    {
+      "term": "Gaming Communities",
+      "category": "gaming-entertainment",
+      "score": 5.9,
+      "percentChange": 56,
+      "sparkline": [
+        30,
+        34,
+        42,
+        46,
+        54,
+        55,
+        69,
+        91
+      ],
+      "firstSeen": "2023-12-06T12:46:02.579330+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579334+00:00",
+      "volume": 24724,
+      "relatedQueries": [
+        "Gaming news",
+        "Gaming events"
+      ]
+    },
+    {
+      "term": "VR Gaming",
+      "category": "gaming-entertainment",
+      "score": 5.4,
+      "percentChange": 96,
+      "sparkline": [
+        45,
+        41,
+        52,
+        63,
+        78,
+        76,
+        90,
+        113
+      ],
+      "firstSeen": "2024-08-28T12:46:02.579291+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579294+00:00",
+      "volume": 6680,
+      "relatedQueries": [
+        "Gaming news",
+        "Entertainment tech",
+        "Entertainment trends"
+      ]
+    },
+    {
+      "term": "Sustainable Travel",
+      "category": "food-travel",
+      "score": 5.1,
+      "percentChange": 161,
+      "sparkline": [
+        29,
+        24,
+        26,
+        22,
+        17,
+        28,
+        26,
+        34
+      ],
+      "firstSeen": "2024-08-12T12:46:02.579352+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579355+00:00",
+      "volume": 65656,
+      "relatedQueries": [
+        "Travel tech",
+        "Food experiences",
+        "Food tech"
+      ]
+    },
+    {
+      "term": "Food Photography",
+      "category": "food-travel",
+      "score": 4.7,
+      "percentChange": 87,
+      "sparkline": [
+        43,
+        53,
+        54,
+        52,
+        60,
+        67,
+        64,
+        83
+      ],
+      "firstSeen": "2024-12-21T12:46:02.579371+00:00",
+      "lastSeen": "2025-09-26T12:46:02.579374+00:00",
+      "volume": 31229,
+      "relatedQueries": [
+        "Food tech",
+        "Travel tech"
       ]
     }
   ]

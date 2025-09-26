@@ -15,6 +15,20 @@ export default function Home() {
     sortBy: 'score'
   });
 
+  const getCategoryDisplayName = (category: string) => {
+    const displayNames: { [key: string]: string } = {
+      'ai-tech': 'AI & Tech',
+      'business-finance': 'Business & Finance',
+      'lifestyle-beauty': 'Lifestyle & Beauty',
+      'science-health': 'Science & Health',
+      'creative-design': 'Creative & Design',
+      'gaming-entertainment': 'Gaming & Entertainment',
+      'food-travel': 'Food & Travel',
+      'fitness-sports': 'Fitness & Sports'
+    };
+    return displayNames[category] || category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
+
   // Fetch real data
   const { topics, categories, loading, error, lastUpdated, isStale, refreshData } = useTopicsData();
 
@@ -152,7 +166,7 @@ export default function Home() {
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 {filters.category ? (
                   <>
-                    Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> topics in <span className="font-semibold text-gray-900 dark:text-white">{filters.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+                    Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> topics in <span className="font-semibold text-gray-900 dark:text-white">{getCategoryDisplayName(filters.category)}</span>
                   </>
                 ) : (
                   <>
