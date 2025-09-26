@@ -12,7 +12,6 @@ export function useTopicsData() {
     error: null,
     lastUpdated: null,
   });
-  const [refreshKey, setRefreshKey] = useState(0);
 
   const fetchData = useCallback(async (forceRefresh: boolean = false) => {
     try {
@@ -43,7 +42,6 @@ export function useTopicsData() {
 
   const refreshData = useCallback(async () => {
     console.log('useTopicsData: refreshData called');
-    setRefreshKey(prev => prev + 1); // Force re-render
     await fetchData(true);
   }, [fetchData]);
 
@@ -71,6 +69,5 @@ export function useTopicsData() {
     ...dataState,
     refreshData,
     isStale: dataService.isDataStale(),
-    refreshKey, // Include refresh key to force re-renders
   };
 }
