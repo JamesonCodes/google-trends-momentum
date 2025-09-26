@@ -91,3 +91,107 @@
 2025-09-25 22:23:02,487 - ERROR - Unexpected error for term zoom background: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
 2025-09-25 22:23:02,489 - INFO - Processing term: noise canceling headphones
 2025-09-25 22:23:02,489 - INFO - Rate limiting: sleeping for 13.3 seconds
+2025-09-25 22:23:15,799 - ERROR - Unexpected error for term noise canceling headphones: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:23:15,799 - INFO - Processing term: monitor stand
+2025-09-25 22:23:15,799 - INFO - Rate limiting: sleeping for 13.1 seconds
+2025-09-25 22:23:28,905 - ERROR - Unexpected error for term monitor stand: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:23:28,906 - INFO - Processing term: desk organizer
+2025-09-25 22:23:28,906 - INFO - Rate limiting: sleeping for 12.0 seconds
+2025-09-25 22:23:40,909 - ERROR - Unexpected error for term desk organizer: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:23:40,910 - INFO - Processing category: design-tools with 8 terms
+2025-09-25 22:23:40,910 - INFO - Processing term: figma
+2025-09-25 22:23:40,910 - INFO - Rate limiting: sleeping for 14.4 seconds
+2025-09-25 22:23:55,308 - ERROR - Unexpected error for term figma: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:23:55,309 - INFO - Processing term: canva
+2025-09-25 22:23:55,309 - INFO - Rate limiting: sleeping for 12.9 seconds
+2025-09-25 22:24:08,178 - ERROR - Unexpected error for term canva: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:24:08,178 - INFO - Processing term: adobe creative suite
+2025-09-25 22:24:08,178 - INFO - Rate limiting: sleeping for 12.2 seconds
+2025-09-25 22:24:20,412 - ERROR - Unexpected error for term adobe creative suite: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:24:20,413 - INFO - Processing term: sketch
+2025-09-25 22:24:20,413 - INFO - Rate limiting: sleeping for 14.0 seconds
+2025-09-25 22:24:29,708 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:29,709 - INFO - Deduplication complete: 2 duplicates removed, 1 unique topics remaining
+2025-09-25 22:24:29,709 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:24:29,712 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:29,712 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:29,712 - INFO - Deduplication complete: 1 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:29,712 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:24:29,712 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:29,712 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:29,712 - INFO - Deduplication complete: 0 duplicates removed, 3 unique topics remaining
+2025-09-25 22:24:29,843 - INFO - Starting deduplication of 16 topics
+2025-09-25 22:24:29,844 - INFO - Deduplication complete: 6 duplicates removed, 10 unique topics remaining
+2025-09-25 22:24:34,383 - ERROR - Unexpected error for term sketch: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:24:34,383 - INFO - Processing term: procreate
+2025-09-25 22:24:34,383 - INFO - Rate limiting: sleeping for 13.6 seconds
+2025-09-25 22:24:48,002 - ERROR - Unexpected error for term procreate: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:24:48,003 - INFO - Processing term: blender
+2025-09-25 22:24:48,003 - INFO - Rate limiting: sleeping for 13.4 seconds
+2025-09-25 22:24:56,636 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:56,637 - INFO - Deduplication complete: 2 duplicates removed, 1 unique topics remaining
+2025-09-25 22:24:56,637 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:24:56,638 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:56,638 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:56,638 - INFO - Deduplication complete: 1 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:56,638 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:24:56,638 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:24:56,639 - INFO - Starting deduplication of 3 topics
+2025-09-25 22:24:56,639 - INFO - Deduplication complete: 0 duplicates removed, 3 unique topics remaining
+2025-09-25 22:24:56,777 - INFO - Starting deduplication of 16 topics
+2025-09-25 22:24:56,777 - INFO - Deduplication complete: 6 duplicates removed, 10 unique topics remaining
+2025-09-25 22:25:01,424 - ERROR - Unexpected error for term blender: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:25:01,425 - INFO - Processing term: webflow
+2025-09-25 22:25:01,425 - INFO - Rate limiting: sleeping for 14.9 seconds
+2025-09-25 22:25:16,283 - ERROR - Unexpected error for term webflow: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:25:16,284 - INFO - Processing term: framer
+2025-09-25 22:25:16,284 - INFO - Rate limiting: sleeping for 14.8 seconds
+2025-09-25 22:25:31,065 - ERROR - Unexpected error for term framer: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:25:31,066 - INFO - Processing category: crypto with 8 terms
+2025-09-25 22:25:31,067 - INFO - Processing term: bitcoin
+2025-09-25 22:25:31,067 - INFO - Rate limiting: sleeping for 12.6 seconds
+2025-09-25 22:25:31,744 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:31,745 - INFO - Deduplication complete: 3 duplicates removed, 1 unique topics remaining
+2025-09-25 22:25:31,745 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:31,745 - INFO - Deduplication complete: 0 duplicates removed, 4 unique topics remaining
+2025-09-25 22:25:31,745 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:31,745 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:25:31,745 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:31,746 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:25:43,700 - ERROR - Unexpected error for term bitcoin: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:25:43,700 - INFO - Processing term: ethereum
+2025-09-25 22:25:43,700 - INFO - Rate limiting: sleeping for 15.0 seconds
+2025-09-25 22:25:45,323 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:45,323 - INFO - Deduplication complete: 3 duplicates removed, 1 unique topics remaining
+2025-09-25 22:25:45,324 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:45,324 - INFO - Deduplication complete: 0 duplicates removed, 4 unique topics remaining
+2025-09-25 22:25:45,324 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:45,324 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:25:45,324 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:25:45,324 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:25:58,654 - ERROR - Unexpected error for term ethereum: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:25:58,655 - INFO - Processing term: nft
+2025-09-25 22:25:58,655 - INFO - Rate limiting: sleeping for 14.8 seconds
+2025-09-25 22:26:04,237 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:26:04,238 - INFO - Deduplication complete: 3 duplicates removed, 1 unique topics remaining
+2025-09-25 22:26:04,238 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:26:04,238 - INFO - Deduplication complete: 1 duplicates removed, 3 unique topics remaining
+2025-09-25 22:26:04,238 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:26:04,238 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:26:04,238 - INFO - Starting deduplication of 4 topics
+2025-09-25 22:26:04,239 - INFO - Deduplication complete: 2 duplicates removed, 2 unique topics remaining
+2025-09-25 22:26:13,414 - ERROR - Unexpected error for term nft: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:26:13,415 - INFO - Processing term: defi
+2025-09-25 22:26:13,415 - INFO - Rate limiting: sleeping for 13.3 seconds
+2025-09-25 22:26:26,688 - ERROR - Unexpected error for term defi: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:26:26,689 - INFO - Processing term: web3
+2025-09-25 22:26:26,689 - INFO - Rate limiting: sleeping for 14.9 seconds
+2025-09-25 22:26:41,557 - ERROR - Unexpected error for term web3: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:26:41,557 - INFO - Processing term: cryptocurrency
+2025-09-25 22:26:41,557 - INFO - Rate limiting: sleeping for 13.5 seconds
+2025-09-25 22:26:55,094 - ERROR - Unexpected error for term cryptocurrency: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:26:55,095 - INFO - Processing term: blockchain
+2025-09-25 22:26:55,096 - INFO - Rate limiting: sleeping for 13.8 seconds
+2025-09-25 22:27:08,896 - ERROR - Unexpected error for term blockchain: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:27:08,896 - INFO - Processing term: metaverse
+2025-09-25 22:27:08,896 - INFO - Rate limiting: sleeping for 13.2 seconds

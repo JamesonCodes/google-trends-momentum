@@ -188,39 +188,106 @@ class TrendsDataPipeline:
         
         return [(val - mean_val) / std_val for val in values]
     
+    def _normalize_term_for_dedup(self, term: str) -> str:
+        """Normalize term for better deduplication matching."""
+        # Convert to lowercase and strip whitespace
+        normalized = term.lower().strip()
+        
+        # Remove common punctuation and special characters, but keep spaces
+        # This helps with abbreviations like "A.I." -> "ai" and "Chat-GPT" -> "chatgpt"
+        normalized = normalized.replace('-', '').replace('_', '').replace('.', '')
+        
+        # Remove extra spaces
+        normalized = ' '.join(normalized.split())
+        
+        return normalized
+
+    def _calculate_similarity_threshold(self, term1: str, term2: str) -> int:
+        """Calculate dynamic similarity threshold based on term characteristics."""
+        # Base threshold
+        base_threshold = 85
+        
+        # Lower threshold for shorter terms (more likely to be abbreviations)
+        if len(term1) <= 3 or len(term2) <= 3:
+            return 75
+        
+        # Lower threshold for terms with numbers
+        if any(char.isdigit() for char in term1 + term2):
+            return 80
+        
+        # Higher threshold for very long terms (more specific)
+        if len(term1) > 20 or len(term2) > 20:
+            return 90
+        
+        return base_threshold
+
     def _deduplicate_topics(self, topics: List[Dict]) -> List[Dict]:
-        """Remove duplicate topics using fuzzy matching."""
+        """Remove duplicate topics using fuzzy matching with multiple algorithms."""
         if not topics:
             return topics
         
+        logger.info(f"Starting deduplication of {len(topics)} topics")
+        
+        # Sort topics by score (highest first) to keep best versions
+        topics_sorted = sorted(topics, key=lambda x: x['score'], reverse=True)
+        
         unique_topics = []
         seen_terms = set()
+        duplicates_found = 0
         
-        for topic in topics:
-            term = topic['term'].lower().strip()
+        for topic in topics_sorted:
+            term = topic['term']
+            normalized_term = self._normalize_term_for_dedup(term)
             
-            # Check for exact duplicates
-            if term in seen_terms:
+            # Skip if exact duplicate already processed
+            if normalized_term in seen_terms:
+                duplicates_found += 1
                 continue
             
-            # Check for fuzzy duplicates
+            # Check for fuzzy duplicates using multiple algorithms
             is_duplicate = False
-            for existing in unique_topics:
-                existing_term = existing['term'].lower().strip()
-                similarity = fuzz.ratio(term, existing_term)
-                
-                if similarity > 85:  # 85% similarity threshold
-                    # Keep the one with higher score
-                    if topic['score'] > existing['score']:
-                        unique_topics.remove(existing)
-                        unique_topics.append(topic)
-                    is_duplicate = True
-                    break
+            best_match = None
+            best_similarity = 0
             
-            if not is_duplicate:
+            for existing in unique_topics:
+                existing_term = existing['term']
+                existing_normalized = self._normalize_term_for_dedup(existing_term)
+                
+                # Use multiple fuzzy matching algorithms for better accuracy
+                ratio_similarity = fuzz.ratio(normalized_term, existing_normalized)
+                partial_similarity = fuzz.partial_ratio(normalized_term, existing_normalized)
+                token_sort_similarity = fuzz.token_sort_ratio(normalized_term, existing_normalized)
+                token_set_similarity = fuzz.token_set_ratio(normalized_term, existing_normalized)
+                
+                # Take the maximum similarity across all algorithms
+                max_similarity = max(ratio_similarity, partial_similarity, token_sort_similarity, token_set_similarity)
+                
+                # Use dynamic threshold based on term characteristics
+                threshold = self._calculate_similarity_threshold(normalized_term, existing_normalized)
+                
+                # Consider it a duplicate if similarity exceeds threshold
+                if max_similarity > threshold:
+                    if max_similarity > best_similarity:
+                        best_match = existing
+                        best_similarity = max_similarity
+                    is_duplicate = True
+            
+            if is_duplicate and best_match:
+                # Keep the one with higher score (topics_sorted is already sorted by score)
+                if topic['score'] > best_match['score']:
+                    # Replace the existing topic with the better one
+                    unique_topics.remove(best_match)
+                    unique_topics.append(topic)
+                    logger.debug(f"Replaced '{best_match['term']}' with '{topic['term']}' (similarity: {best_similarity:.1f}%)")
+                else:
+                    logger.debug(f"Kept '{best_match['term']}' over '{topic['term']}' (similarity: {best_similarity:.1f}%)")
+                duplicates_found += 1
+            else:
+                # No duplicate found, add to unique topics
                 unique_topics.append(topic)
-                seen_terms.add(term)
+                seen_terms.add(normalized_term)
         
+        logger.info(f"Deduplication complete: {duplicates_found} duplicates removed, {len(unique_topics)} unique topics remaining")
         return unique_topics
     
     def _process_category(self, category: str, terms: List[str]) -> List[Dict]:
