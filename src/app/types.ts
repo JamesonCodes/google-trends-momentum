@@ -12,7 +12,6 @@ export interface Topic {
 
 export interface FilterState {
   category: string;
-  minScore: number;
   sortBy: 'score' | 'percentChange';
 }
 

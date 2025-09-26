@@ -11,9 +11,6 @@ export default function Filters({ filters, onFiltersChange, categories }: Filter
     onFiltersChange({ ...filters, category });
   };
 
-  const handleMinScoreChange = (minScore: number) => {
-    onFiltersChange({ ...filters, minScore });
-  };
 
   const handleSortChange = (sortBy: 'score' | 'percentChange') => {
     onFiltersChange({ ...filters, sortBy });
@@ -69,25 +66,6 @@ export default function Filters({ filters, onFiltersChange, categories }: Filter
         </div>
       </div>
 
-      {/* Min Score Filter */}
-      <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-        <div className="flex items-center justify-between">
-          <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-            Minimum Score: {filters.minScore}
-          </label>
-          <div className="w-48">
-            <input
-              type="range"
-              min="0"
-              max="10"
-              step="0.1"
-              value={filters.minScore}
-              onChange={(e) => handleMinScoreChange(parseFloat(e.target.value))}
-              className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
-            />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

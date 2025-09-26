@@ -13,7 +13,6 @@ import DebugInfo from './components/DebugInfo';
 export default function Home() {
   const [filters, setFilters] = useState<FilterState>({
     category: '',
-    minScore: 0,
     sortBy: 'score'
   });
 
@@ -24,8 +23,7 @@ export default function Home() {
   const filteredAndSortedTopics = useMemo(() => {
     const filtered = topics.filter(topic => {
       const categoryMatch = !filters.category || topic.category === filters.category;
-      const scoreMatch = topic.score >= filters.minScore;
-      return categoryMatch && scoreMatch;
+      return categoryMatch;
     });
 
     // Sort topics
