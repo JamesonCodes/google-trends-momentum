@@ -154,11 +154,10 @@ class TrendsDataPipeline:
         if len(sparkline) < 8:
             return 0.0, 0.0, 0.0
         
-        # Get last 8 weeks for slope calculation
-        last_8_weeks = sparkline[-8:]
         all_weeks = sparkline
         
         # Calculate slope (trend over last 8 weeks)
+        last_8_weeks = sparkline[-8:]
         x = np.arange(len(last_8_weeks))
         y = np.array(last_8_weeks)
         slope = np.polyfit(x, y, 1)[0] if len(last_8_weeks) > 1 else 0
@@ -171,7 +170,7 @@ class TrendsDataPipeline:
         else:
             percent_change = 0
         
-        # Calculate volatility (standard deviation)
+        # Calculate volatility (standard deviation of all data)
         volatility = np.std(all_weeks) if len(all_weeks) > 1 else 0
         
         return slope, percent_change, volatility
@@ -259,7 +258,13 @@ class TrendsDataPipeline:
                 'firstSeen': (datetime.now() - timedelta(weeks=len(sparkline))).isoformat(),
                 'lastSeen': datetime.now().isoformat(),
                 'volume': int(median_volume),
-                'relatedQueries': related_queries[:3]  # Keep top 3 related queries
+                'relatedQueries': related_queries[:3],  # Keep top 3 related queries
+                # Debug info (will be removed in production)
+                'debug': {
+                    'slope': slope,
+                    'volatility': volatility,
+                    'medianVolume': median_volume
+                }
             }
             
             topics.append(topic)
@@ -272,9 +277,24 @@ class TrendsDataPipeline:
             return all_topics
         
         # Extract components for normalization
-        slopes = [t['percentChange'] for t in all_topics]  # Using percent_change as slope proxy
-        percent_changes = [t['percentChange'] for t in all_topics]
-        volatilities = [np.std(t['sparkline']) for t in all_topics]
+        slopes = []
+        percent_changes = []
+        volatilities = []
+        
+        for topic in all_topics:
+            sparkline = topic['sparkline']
+            if len(sparkline) >= 8:
+                # Calculate actual slope from last 8 weeks
+                last_8_weeks = sparkline[-8:]
+                x = np.arange(len(last_8_weeks))
+                y = np.array(last_8_weeks)
+                slope = np.polyfit(x, y, 1)[0] if len(last_8_weeks) > 1 else 0
+                slopes.append(slope)
+            else:
+                slopes.append(0.0)
+            
+            percent_changes.append(topic['percentChange'])
+            volatilities.append(np.std(sparkline) if len(sparkline) > 1 else 0)
         
         # Normalize components
         norm_slopes = self._normalize_score(slopes)
@@ -311,14 +331,25 @@ class TrendsDataPipeline:
         except Exception as e:
             logger.error(f"Error cleaning up archives: {e}")
     
+    def _clean_debug_info(self, topics: List[Dict]) -> List[Dict]:
+        """Remove debug information from topics before saving."""
+        cleaned_topics = []
+        for topic in topics:
+            cleaned_topic = {k: v for k, v in topic.items() if k != 'debug'}
+            cleaned_topics.append(cleaned_topic)
+        return cleaned_topics
+
     def _save_data(self, topics: List[Dict]):
         """Save topics to latest.json and create archive."""
         try:
+            # Clean debug information
+            cleaned_topics = self._clean_debug_info(topics)
+            
             # Create output data structure
             output_data = {
                 'generatedAt': datetime.now().isoformat(),
-                'totalTopics': len(topics),
-                'topics': topics
+                'totalTopics': len(cleaned_topics),
+                'topics': cleaned_topics
             }
             
             # Save latest.json
