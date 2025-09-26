@@ -1,143 +1,286 @@
 {
-  "generatedAt": "2025-09-26T06:39:16.357948",
-  "totalTopics": 6,
+  "generatedAt": "2025-09-26T07:03:21.433978",
+  "totalTopics": 12,
   "topics": [
     {
-      "term": "\ud83d\ude80 EXPLOSIVE_TOPIC_1",
+      "term": "ChatGPT-5",
       "category": "ai-tools",
-      "score": 9.5,
-      "percentChange": 150.0,
+      "score": 10,
+      "percentChange": 436,
       "sparkline": [
-        10,
+        21,
+        17,
+        30,
+        27,
         25,
-        45,
-        70,
-        95,
-        100,
-        85,
-        90
+        30,
+        44,
+        66
       ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357976",
-      "volume": 1000,
+      "firstSeen": "2025-01-07T07:03:21.433781",
+      "lastSeen": "2025-09-26T07:03:21.433785",
+      "volume": 7876,
       "relatedQueries": [
-        "AI revolution",
-        "Machine learning boom"
+        "Smart tools",
+        "Artificial intelligence"
       ]
     },
     {
-      "term": "\ud83d\udd25 TRENDING_NOW_2",
-      "category": "tech",
-      "score": 8.2,
-      "percentChange": 200.0,
+      "term": "Notion AI",
+      "category": "ai-tools",
+      "score": 10,
+      "percentChange": 392,
       "sparkline": [
-        5,
-        15,
-        30,
-        60,
-        80,
-        95,
-        100,
-        85
+        40,
+        52,
+        49,
+        54,
+        66,
+        69,
+        74,
+        83
       ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357980",
-      "volume": 850,
+      "firstSeen": "2023-11-16T07:03:21.433802",
+      "lastSeen": "2025-09-26T07:03:21.433805",
+      "volume": 47044,
       "relatedQueries": [
-        "Tech innovation",
+        "Artificial intelligence",
+        "AI automation"
+      ]
+    },
+    {
+      "term": "Google Pixel 8",
+      "category": "tech",
+      "score": 10,
+      "percentChange": 302,
+      "sparkline": [
+        18,
+        18,
+        13,
+        16,
+        11,
+        11,
+        12,
+        29
+      ],
+      "firstSeen": "2024-05-22T07:03:21.433824",
+      "lastSeen": "2025-09-26T07:03:21.433827",
+      "volume": 21341,
+      "relatedQueries": [
+        "Tech news",
+        "Digital transformation",
         "Future tech"
       ]
     },
     {
-      "term": "\u26a1 VIRAL_CONCEPT_3",
+      "term": "Gig Economy",
       "category": "business",
-      "score": 7.8,
-      "percentChange": 75.0,
+      "score": 10,
+      "percentChange": 414,
       "sparkline": [
+        18,
         20,
-        35,
-        50,
-        65,
-        80,
-        70,
-        85,
-        90
+        30,
+        43,
+        48,
+        53,
+        60,
+        84
       ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357983",
-      "volume": 650,
+      "firstSeen": "2024-06-22T07:03:21.433867",
+      "lastSeen": "2025-09-26T07:03:21.433870",
+      "volume": 44836,
+      "relatedQueries": [
+        "Industry news",
+        "Entrepreneurship"
+      ]
+    },
+    {
+      "term": "Meta Quest 3",
+      "category": "tech",
+      "score": 9.7,
+      "percentChange": 350,
+      "sparkline": [
+        37,
+        50,
+        62,
+        60,
+        56,
+        57,
+        54,
+        78
+      ],
+      "firstSeen": "2024-02-14T07:03:21.433842",
+      "lastSeen": "2025-09-26T07:03:21.433845",
+      "volume": 28136,
+      "relatedQueries": [
+        "Technology trends",
+        "Tech news",
+        "Tech reviews"
+      ]
+    },
+    {
+      "term": "Mars Exploration",
+      "category": "science",
+      "score": 9.5,
+      "percentChange": 248,
+      "sparkline": [
+        24,
+        23,
+        30,
+        25,
+        21,
+        32,
+        47,
+        73
+      ],
+      "firstSeen": "2024-02-18T07:03:21.433944",
+      "lastSeen": "2025-09-26T07:03:21.433947",
+      "volume": 33614,
+      "relatedQueries": [
+        "Scientific research",
+        "Research findings"
+      ]
+    },
+    {
+      "term": "Runway ML",
+      "category": "ai-tools",
+      "score": 9.3,
+      "percentChange": 293,
+      "sparkline": [
+        17,
+        18,
+        26,
+        21,
+        22,
+        37,
+        36,
+        54
+      ],
+      "firstSeen": "2024-07-31T07:03:21.433304",
+      "lastSeen": "2025-09-26T07:03:21.433330",
+      "volume": 45877,
+      "relatedQueries": [
+        "Machine learning",
+        "Smart tools"
+      ]
+    },
+    {
+      "term": "Jasper AI",
+      "category": "ai-tools",
+      "score": 7.9,
+      "percentChange": 243,
+      "sparkline": [
+        32,
+        35,
+        34,
+        33,
+        34,
+        29,
+        35,
+        44
+      ],
+      "firstSeen": "2024-10-03T07:03:21.433754",
+      "lastSeen": "2025-09-26T07:03:21.433760",
+      "volume": 5831,
+      "relatedQueries": [
+        "AI assistance",
+        "AI productivity"
+      ]
+    },
+    {
+      "term": "James Webb Telescope",
+      "category": "science",
+      "score": 7.2,
+      "percentChange": 176,
+      "sparkline": [
+        35,
+        37,
+        32,
+        42,
+        57,
+        56,
+        69,
+        88
+      ],
+      "firstSeen": "2024-10-10T07:03:21.433962",
+      "lastSeen": "2025-09-26T07:03:21.433965",
+      "volume": 21299,
+      "relatedQueries": [
+        "Technology breakthrough",
+        "Scientific research",
+        "Research findings"
+      ]
+    },
+    {
+      "term": "Freelance Economy",
+      "category": "business",
+      "score": 6.4,
+      "percentChange": 68,
+      "sparkline": [
+        11,
+        11,
+        14,
+        14,
+        14,
+        17,
+        32,
+        54
+      ],
+      "firstSeen": "2024-09-30T07:03:21.433884",
+      "lastSeen": "2025-09-26T07:03:21.433887",
+      "volume": 39307,
       "relatedQueries": [
         "Business growth",
-        "Market trends"
+        "Business innovation"
       ]
     },
     {
-      "term": "\ud83c\udf1f BREAKTHROUGH_4",
+      "term": "Machine Learning",
       "category": "science",
-      "score": 6.9,
-      "percentChange": 120.0,
+      "score": 6.3,
+      "percentChange": 149,
       "sparkline": [
-        15,
-        25,
-        40,
-        55,
-        70,
-        85,
-        90,
-        95
+        16,
+        28,
+        23,
+        29,
+        26,
+        21,
+        18,
+        40
       ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357985",
-      "volume": 500,
+      "firstSeen": "2024-11-14T07:03:21.433924",
+      "lastSeen": "2025-09-26T07:03:21.433926",
+      "volume": 7932,
       "relatedQueries": [
         "Scientific discovery",
-        "Research breakthrough"
+        "Scientific research",
+        "Innovation"
       ]
     },
     {
-      "term": "\ud83d\udca1 INNOVATION_5",
-      "category": "ai-tools",
-      "score": 5.5,
-      "percentChange": 80.0,
+      "term": "Wind Energy",
+      "category": "science",
+      "score": 4.0,
+      "percentChange": 46,
       "sparkline": [
-        30,
-        40,
-        50,
-        60,
-        70,
-        75,
-        80,
-        85
+        39,
+        49,
+        54,
+        69,
+        69,
+        83,
+        82,
+        107
       ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357988",
-      "volume": 400,
+      "firstSeen": "2024-09-12T07:03:21.433905",
+      "lastSeen": "2025-09-26T07:03:21.433908",
+      "volume": 36386,
       "relatedQueries": [
-        "Creative solutions",
-        "Problem solving"
-      ]
-    },
-    {
-      "term": "\ud83c\udfaf FOCUS_AREA_6",
-      "category": "tech",
-      "score": 4.2,
-      "percentChange": 45.0,
-      "sparkline": [
-        40,
-        45,
-        50,
-        55,
-        60,
-        65,
-        70,
-        75
-      ],
-      "firstSeen": "2024-01-01T00:00:00",
-      "lastSeen": "2025-09-26T06:39:16.357990",
-      "volume": 300,
-      "relatedQueries": [
-        "Targeted approach",
-        "Strategic focus"
+        "Tech advancement",
+        "Scientific discovery",
+        "Technology breakthrough"
       ]
     }
   ]
