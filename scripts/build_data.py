@@ -25,16 +25,107 @@ except ImportError as e:
     print("Please install requirements: pip install -r requirements.txt")
     sys.exit(1)
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('data_pipeline.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+# Configure comprehensive logging
+def setup_logging():
+    """Set up comprehensive logging with multiple handlers and levels."""
+    # Create formatters
+    detailed_formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s'
+    )
+    simple_formatter = logging.Formatter(
+        '%(asctime)s - %(levelname)s - %(message)s'
+    )
+    
+    # Create handlers
+    handlers = []
+    
+    # File handler for detailed logs
+    file_handler = logging.FileHandler('data_pipeline.log')
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(detailed_formatter)
+    handlers.append(file_handler)
+    
+    # Console handler for important messages
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(simple_formatter)
+    handlers.append(console_handler)
+    
+    # Error file handler for critical errors
+    error_handler = logging.FileHandler('data_pipeline_errors.log')
+    error_handler.setLevel(logging.ERROR)
+    error_handler.setFormatter(detailed_formatter)
+    handlers.append(error_handler)
+    
+    # Configure root logger
+    logging.basicConfig(
+        level=logging.DEBUG,
+        handlers=handlers
+    )
+    
+    # Set specific logger levels
+    logging.getLogger('urllib3').setLevel(logging.WARNING)
+    logging.getLogger('requests').setLevel(logging.WARNING)
+    
+    return logging.getLogger(__name__)
+
+# Set up logging
+logger = setup_logging()
+
+# Error tracking and metrics
+class ErrorTracker:
+    """Track errors and performance metrics."""
+    
+    def __init__(self):
+        self.errors = []
+        self.warnings = []
+        self.metrics = {
+            'api_calls': 0,
+            'api_errors': 0,
+            'processing_errors': 0,
+            'validation_errors': 0,
+            'start_time': None,
+            'end_time': None
+        }
+    
+    def log_error(self, error_type: str, message: str, context: dict = None):
+        """Log an error with context."""
+        error_entry = {
+            'timestamp': datetime.now().isoformat(),
+            'type': error_type,
+            'message': message,
+            'context': context or {}
+        }
+        self.errors.append(error_entry)
+        logger.error(f"[{error_type}] {message}", extra={'context': context})
+    
+    def log_warning(self, warning_type: str, message: str, context: dict = None):
+        """Log a warning with context."""
+        warning_entry = {
+            'timestamp': datetime.now().isoformat(),
+            'type': warning_type,
+            'message': message,
+            'context': context or {}
+        }
+        self.warnings.append(warning_entry)
+        logger.warning(f"[{warning_type}] {message}", extra={'context': context})
+    
+    def increment_metric(self, metric_name: str, value: int = 1):
+        """Increment a metric counter."""
+        if metric_name in self.metrics:
+            self.metrics[metric_name] += value
+        else:
+            self.metrics[metric_name] = value
+    
+    def get_summary(self) -> dict:
+        """Get error and performance summary."""
+        return {
+            'total_errors': len(self.errors),
+            'total_warnings': len(self.warnings),
+            'metrics': self.metrics.copy(),
+            'error_types': list(set(e['type'] for e in self.errors)),
+            'warning_types': list(set(w['type'] for w in self.warnings))
+        }
 
 class TrendsDataPipeline:
     def __init__(self, seeds_file: str = "data/seeds.json"):
@@ -44,27 +135,42 @@ class TrendsDataPipeline:
         self.archive_dir = os.path.join(self.output_dir, "archive")
         self.latest_file = os.path.join(self.output_dir, "latest.json")
         
-        # Ensure directories exist
-        os.makedirs(self.output_dir, exist_ok=True)
-        os.makedirs(self.archive_dir, exist_ok=True)
+        # Initialize error tracking
+        self.error_tracker = ErrorTracker()
+        self.error_tracker.metrics['start_time'] = datetime.now().isoformat()
         
-        # Load seeds data
-        self.seeds_data = self._load_seeds()
-        
-        # Initialize pytrends with rate limiting
-        self.pytrends = TrendReq(
-            hl='en-US',
-            tz=360,
-            timeout=(10, 25),
-            retries=2,
-            backoff_factor=0.1,
-            requests_args={'verify': False}
-        )
-        
-        # Rate limiting settings
-        self.min_delay = 12  # Minimum seconds between requests
-        self.max_delay = 15  # Maximum seconds between requests
-        self.last_request_time = 0
+        try:
+            # Ensure directories exist
+            os.makedirs(self.output_dir, exist_ok=True)
+            os.makedirs(self.archive_dir, exist_ok=True)
+            logger.debug("Output directories created successfully")
+            
+            # Load seeds data
+            self.seeds_data = self._load_seeds()
+            
+            # Initialize pytrends with rate limiting
+            self.pytrends = TrendReq(
+                hl='en-US',
+                tz=360,
+                timeout=(10, 25),
+                retries=2,
+                backoff_factor=0.1,
+                requests_args={'verify': False}
+            )
+            logger.debug("Pytrends initialized successfully")
+            
+            # Rate limiting settings
+            self.min_delay = 12  # Minimum seconds between requests
+            self.max_delay = 15  # Maximum seconds between requests
+            self.last_request_time = 0
+            
+        except Exception as e:
+            self.error_tracker.log_error(
+                'INITIALIZATION_ERROR',
+                f"Failed to initialize pipeline: {str(e)}",
+                {'seeds_file': seeds_file, 'error': str(e)}
+            )
+            raise
         
     def _load_seeds(self) -> Dict:
         """Load seeds configuration from JSON file."""
@@ -94,27 +200,47 @@ class TrendsDataPipeline:
         """Get interest over time data for a single term."""
         try:
             self._rate_limit()
+            self.error_tracker.increment_metric('api_calls')
             
             self.pytrends.build_payload([term], timeframe=timeframe, geo='', gprop='')
             interest_data = self.pytrends.interest_over_time()
             
             if interest_data.empty or term not in interest_data.columns:
-                logger.warning(f"No interest data for term: {term}")
+                self.error_tracker.log_warning(
+                    'NO_DATA',
+                    f"No interest data for term: {term}",
+                    {'term': term, 'timeframe': timeframe}
+                )
                 return None
             
             # Get the last 52 weeks of data (weekly)
             values = interest_data[term].tolist()
             if len(values) < 8:  # Need at least 8 weeks for meaningful analysis
-                logger.warning(f"Insufficient data for term: {term} (only {len(values)} weeks)")
+                self.error_tracker.log_warning(
+                    'INSUFFICIENT_DATA',
+                    f"Insufficient data for term: {term} (only {len(values)} weeks)",
+                    {'term': term, 'data_points': len(values), 'min_required': 8}
+                )
                 return None
                 
+            logger.debug(f"Successfully retrieved {len(values)} data points for {term}")
             return values[-52:] if len(values) > 52 else values  # Cap at 52 weeks
             
         except (ResponseError, TooManyRequestsError) as e:
-            logger.error(f"API error for term {term}: {e}")
+            self.error_tracker.increment_metric('api_errors')
+            self.error_tracker.log_error(
+                'API_ERROR',
+                f"API error for term {term}: {str(e)}",
+                {'term': term, 'error_type': type(e).__name__, 'error': str(e)}
+            )
             return None
         except Exception as e:
-            logger.error(f"Unexpected error for term {term}: {e}")
+            self.error_tracker.increment_metric('api_errors')
+            self.error_tracker.log_error(
+                'UNEXPECTED_ERROR',
+                f"Unexpected error for term {term}: {str(e)}",
+                {'term': term, 'error_type': type(e).__name__, 'error': str(e)}
+            )
             return None
     
     def _get_related_queries(self, term: str) -> List[str]:
@@ -718,47 +844,150 @@ class TrendsDataPipeline:
             raise
     
     def run(self):
-        """Run the complete data pipeline."""
+        """Run the complete data pipeline with comprehensive error handling."""
         logger.info("Starting Exploding Topics data pipeline")
         start_time = time.time()
+        self.error_tracker.metrics['start_time'] = datetime.now().isoformat()
         
         try:
             all_topics = []
+            categories_processed = 0
+            total_terms_processed = 0
             
             # Process each category
             for category, config in self.seeds_data['categories'].items():
-                terms = config['terms']
-                category_topics = self._process_category(category, terms)
-                all_topics.extend(category_topics)
+                try:
+                    terms = config['terms']
+                    logger.info(f"Processing category: {category} with {len(terms)} terms")
+                    
+                    category_topics = self._process_category(category, terms)
+                    all_topics.extend(category_topics)
+                    
+                    categories_processed += 1
+                    total_terms_processed += len(terms)
+                    
+                    logger.info(f"Category {category} completed: {len(category_topics)} topics collected")
+                    
+                except Exception as e:
+                    self.error_tracker.log_error(
+                        'CATEGORY_PROCESSING_ERROR',
+                        f"Failed to process category {category}: {str(e)}",
+                        {'category': category, 'terms_count': len(config['terms']), 'error': str(e)}
+                    )
+                    # Continue with other categories
+                    continue
             
             logger.info(f"Collected {len(all_topics)} topics before deduplication")
+            self.error_tracker.metrics['topics_before_dedup'] = len(all_topics)
             
             # Deduplicate topics
-            all_topics = self._deduplicate_topics(all_topics)
-            logger.info(f"After deduplication: {len(all_topics)} topics")
+            try:
+                all_topics = self._deduplicate_topics(all_topics)
+                logger.info(f"After deduplication: {len(all_topics)} topics")
+                self.error_tracker.metrics['topics_after_dedup'] = len(all_topics)
+            except Exception as e:
+                self.error_tracker.log_error(
+                    'DEDUPLICATION_ERROR',
+                    f"Failed to deduplicate topics: {str(e)}",
+                    {'topics_count': len(all_topics), 'error': str(e)}
+                )
+                # Continue with original topics
+                pass
             
             # Calculate final scores
-            all_topics = self._calculate_final_scores(all_topics)
+            try:
+                all_topics = self._calculate_final_scores(all_topics)
+                logger.info("Final scores calculated successfully")
+            except Exception as e:
+                self.error_tracker.log_error(
+                    'SCORING_ERROR',
+                    f"Failed to calculate final scores: {str(e)}",
+                    {'topics_count': len(all_topics), 'error': str(e)}
+                )
+                # Continue with unscored topics
+                pass
             
             # Sort by score (highest first)
-            all_topics.sort(key=lambda x: x['score'], reverse=True)
+            all_topics.sort(key=lambda x: x.get('score', 0), reverse=True)
             
             # Apply intelligent capping and filtering
-            all_topics = self._apply_final_filtering_and_capping(all_topics)
+            try:
+                all_topics = self._apply_final_filtering_and_capping(all_topics)
+                logger.info("Final filtering and capping completed")
+                self.error_tracker.metrics['topics_final'] = len(all_topics)
+            except Exception as e:
+                self.error_tracker.log_error(
+                    'FILTERING_ERROR',
+                    f"Failed to apply final filtering: {str(e)}",
+                    {'topics_count': len(all_topics), 'error': str(e)}
+                )
+                # Continue with unfiltered topics
+                pass
             
             # Save data
-            self._save_data(all_topics)
+            try:
+                self._save_data(all_topics)
+                logger.info("Data saved successfully")
+            except Exception as e:
+                self.error_tracker.log_error(
+                    'SAVE_ERROR',
+                    f"Failed to save data: {str(e)}",
+                    {'topics_count': len(all_topics), 'error': str(e)}
+                )
+                raise  # Re-raise as this is critical
             
-            # Log summary
+            # Calculate final metrics
             runtime = time.time() - start_time
-            logger.info(f"Pipeline completed successfully in {runtime:.1f} seconds")
-            logger.info(f"Final topics: {len(all_topics)}")
+            self.error_tracker.metrics['end_time'] = datetime.now().isoformat()
+            self.error_tracker.metrics['runtime_seconds'] = runtime
+            self.error_tracker.metrics['categories_processed'] = categories_processed
+            self.error_tracker.metrics['terms_processed'] = total_terms_processed
+            
+            # Log comprehensive summary
+            self._log_pipeline_summary(runtime, all_topics)
             
             return True
             
         except Exception as e:
+            self.error_tracker.log_error(
+                'PIPELINE_CRITICAL_ERROR',
+                f"Pipeline failed with critical error: {str(e)}",
+                {'error': str(e), 'traceback': str(e.__traceback__)}
+            )
             logger.error(f"Pipeline failed: {e}")
             return False
+    
+    def _log_pipeline_summary(self, runtime: float, final_topics: List[Dict]):
+        """Log comprehensive pipeline summary."""
+        summary = self.error_tracker.get_summary()
+        
+        logger.info("=" * 60)
+        logger.info("PIPELINE EXECUTION SUMMARY")
+        logger.info("=" * 60)
+        logger.info(f"Runtime: {runtime:.1f} seconds")
+        logger.info(f"Final topics: {len(final_topics)}")
+        logger.info(f"Categories processed: {summary['metrics'].get('categories_processed', 0)}")
+        logger.info(f"Terms processed: {summary['metrics'].get('terms_processed', 0)}")
+        logger.info(f"API calls made: {summary['metrics'].get('api_calls', 0)}")
+        logger.info(f"API errors: {summary['metrics'].get('api_errors', 0)}")
+        logger.info(f"Total errors: {summary['total_errors']}")
+        logger.info(f"Total warnings: {summary['total_warnings']}")
+        
+        if summary['error_types']:
+            logger.info(f"Error types: {', '.join(summary['error_types'])}")
+        
+        if summary['warning_types']:
+            logger.info(f"Warning types: {', '.join(summary['warning_types'])}")
+        
+        # Log success/failure status
+        if summary['total_errors'] == 0:
+            logger.info("STATUS: SUCCESS - No errors encountered")
+        elif summary['total_errors'] < 5:
+            logger.info("STATUS: SUCCESS WITH WARNINGS - Minor errors encountered")
+        else:
+            logger.warning("STATUS: PARTIAL SUCCESS - Multiple errors encountered")
+        
+        logger.info("=" * 60)
 
 def main():
     """Main entry point."""
