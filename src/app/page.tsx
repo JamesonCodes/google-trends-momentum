@@ -47,7 +47,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-              Exploding Topics
+              Rising Topics
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Discover trending topics across categories
@@ -66,7 +66,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-              Exploding Topics
+              Rising Topics
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Discover trending topics across categories
@@ -84,10 +84,10 @@ export default function Home() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Discover Current Trends
+            Rising Topics
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Uncover the most explosive and trending topics across all categories with real-time data and insights
+            Discover the most trending and rising topics across all categories with real-time data and insights
           </p>
         </div>
 

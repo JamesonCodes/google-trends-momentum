@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exploding Topics Data Pipeline
+Rising Topics Data Pipeline
 Fetches trending topics from Google Trends and generates latest.json
 """
 
@@ -845,7 +845,7 @@ class TrendsDataPipeline:
     
     def run(self):
         """Run the complete data pipeline with comprehensive error handling."""
-        logger.info("Starting Exploding Topics data pipeline")
+        logger.info("Starting Rising Topics data pipeline")
         start_time = time.time()
         self.error_tracker.metrics['start_time'] = datetime.now().isoformat()
         
@@ -962,7 +962,7 @@ class TrendsDataPipeline:
         summary = self.error_tracker.get_summary()
         
         logger.info("=" * 60)
-        logger.info("PIPELINE EXECUTION SUMMARY")
+        logger.info("RISING TOPICS PIPELINE EXECUTION SUMMARY")
         logger.info("=" * 60)
         logger.info(f"Runtime: {runtime:.1f} seconds")
         logger.info(f"Final topics: {len(final_topics)}")

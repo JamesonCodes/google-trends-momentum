@@ -32,7 +32,7 @@ def create_test_data(version):
 def test_refresh_functionality():
     """Test the refresh functionality by updating data multiple times."""
     
-    print("Testing refresh functionality...")
+    print("Testing Rising Topics refresh functionality...")
     print("This will update the data file multiple times to test if the UI refreshes.")
     
     # Initial data

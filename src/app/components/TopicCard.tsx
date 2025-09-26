@@ -17,10 +17,10 @@ export default function TopicCard({ topic }: TopicCardProps) {
   };
 
   const getTrendStatus = (score: number, percentChange: number) => {
-    if (score > 7 && percentChange > 100) return { label: 'EXPLODING', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' };
+    if (score > 7 && percentChange > 100) return { label: 'RISING FAST', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' };
     if (score > 5 && percentChange > 50) return { label: 'TRENDING', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' };
     if (score > 3 && percentChange > 20) return { label: 'RISING', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' };
-    return { label: 'REGULAR', color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200' };
+    return { label: 'STABLE', color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200' };
   };
 
   const getCategoryColor = (category: string) => {

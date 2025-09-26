@@ -89,7 +89,7 @@ def create_dramatic_test_data():
     with open(output_file, 'w') as f:
         json.dump(test_data, f, indent=2)
     
-    print(f"Created dramatic test data with {len(test_data['topics'])} topics")
+    print(f"Created dramatic Rising Topics test data with {len(test_data['topics'])} topics")
     print(f"Generated at: {test_data['generatedAt']}")
     print("Topics include emojis and different categories to make changes obvious!")
 

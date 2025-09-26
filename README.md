@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rising Topics
+
+A modern web application for discovering trending and rising topics across various categories. Built with Next.js 14, TypeScript, and powered by real-time Google Trends data.
+
+## Features
+
+- **Real-time Data**: Live trending topics from Google Trends API
+- **Professional UI**: Clean, modern interface with interactive charts
+- **Smart Filtering**: Filter by category, time period, and trend status
+- **Trend Analysis**: Visual sparklines and growth metrics
+- **Auto-refresh**: Automatic data updates with manual refresh capability
+- **Responsive Design**: Works perfectly on all devices
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **Data Pipeline**: Python, pytrends, pandas, numpy
+- **Charts**: Custom SVG sparklines
+- **Deployment**: Vercel-ready
 
 ## Getting Started
 

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Exploding Topics - Discover Trending Topics",
+  title: "Rising Topics - Discover Trending Topics",
   description: "Discover trending topics across categories with real-time data and insights",
 };
 

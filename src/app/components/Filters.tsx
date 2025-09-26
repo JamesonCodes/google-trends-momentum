@@ -63,7 +63,7 @@ export default function Filters({ filters, onFiltersChange, categories }: Filter
             </label>
             <select className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-medium">
               <option>All Topics</option>
-              <option>Exploding</option>
+              <option>Rising Fast</option>
               <option>Trending</option>
               <option>Rising</option>
             </select>
