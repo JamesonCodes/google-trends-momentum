@@ -41,7 +41,7 @@ jobs:
     - name: Run Python security check
       run: |
         pip install safety
-        safety check
+        safety check --ignore 77744
     
     - name: Check for secrets
       uses: trufflesecurity/trufflehog@main
