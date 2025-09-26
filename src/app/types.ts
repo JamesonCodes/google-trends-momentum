@@ -7,6 +7,7 @@ export interface Topic {
   firstSeen: string;
   lastSeen: string;
   volume: number;
+  relatedQueries?: string[];
 }
 
 export interface FilterState {
@@ -29,4 +30,18 @@ export interface SeedsData {
     geo: string;
     gprop: string;
   };
+}
+
+export interface TopicsResponse {
+  generatedAt: string;
+  totalTopics: number;
+  topics: Topic[];
+}
+
+export interface DataState {
+  topics: Topic[];
+  categories: string[];
+  loading: boolean;
+  error: string | null;
+  lastUpdated: string | null;
 }

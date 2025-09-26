@@ -1,10 +1,13 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Topic, FilterState } from './types';
-import { mockTopics, categories } from './mockData';
+import { FilterState } from './types';
+import { useTopicsData } from './hooks/useTopicsData';
 import TopicCard from './components/TopicCard';
 import Filters from './components/Filters';
+import LoadingSpinner from './components/LoadingSpinner';
+import ErrorDisplay from './components/ErrorDisplay';
+import DataStatus from './components/DataStatus';
 
 export default function Home() {
   const [filters, setFilters] = useState<FilterState>({
@@ -13,9 +16,12 @@ export default function Home() {
     sortBy: 'score'
   });
 
+  // Fetch real data
+  const { topics, categories, loading, error, lastUpdated, isStale, refreshData } = useTopicsData();
+
   // Filter and sort topics
   const filteredAndSortedTopics = useMemo(() => {
-    let filtered = mockTopics.filter(topic => {
+    const filtered = topics.filter(topic => {
       const categoryMatch = !filters.category || topic.category === filters.category;
       const scoreMatch = topic.score >= filters.minScore;
       return categoryMatch && scoreMatch;
@@ -31,7 +37,45 @@ export default function Home() {
     });
 
     return filtered;
-  }, [filters]);
+  }, [topics, filters]);
+
+  // Show loading state
+  if (loading && topics.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              Exploding Topics
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Discover trending topics across categories
+            </p>
+          </div>
+          <LoadingSpinner size="lg" className="py-20" />
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error && topics.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              Exploding Topics
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Discover trending topics across categories
+            </p>
+          </div>
+          <ErrorDisplay error={error} onRetry={refreshData} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -46,6 +90,14 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Data Status */}
+        <DataStatus 
+          lastUpdated={lastUpdated}
+          isStale={isStale}
+          onRefresh={refreshData}
+          loading={loading}
+        />
+
         {/* Filters */}
         <Filters 
           filters={filters}
@@ -56,7 +108,7 @@ export default function Home() {
         {/* Results Summary */}
         <div className="mb-6">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Showing {filteredAndSortedTopics.length} of {mockTopics.length} topics
+            Showing {filteredAndSortedTopics.length} of {topics.length} topics
           </p>
         </div>
 
@@ -68,7 +120,7 @@ export default function Home() {
         </div>
 
         {/* Empty State */}
-        {filteredAndSortedTopics.length === 0 && (
+        {filteredAndSortedTopics.length === 0 && !loading && (
           <div className="text-center py-12">
             <div className="text-gray-400 dark:text-gray-600 mb-4">
               <svg className="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
