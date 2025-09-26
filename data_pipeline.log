@@ -1,0 +1,56 @@
+2025-09-25 22:16:44,171 - INFO - Starting Exploding Topics data pipeline
+2025-09-25 22:16:44,171 - INFO - Processing category: ai-tools with 8 terms
+2025-09-25 22:16:44,171 - INFO - Processing term: chatgpt
+2025-09-25 22:16:44,171 - ERROR - Unexpected error for term chatgpt: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:16:44,172 - INFO - Processing term: claude
+2025-09-25 22:16:44,172 - INFO - Rate limiting: sleeping for 12.2 seconds
+2025-09-25 22:16:56,372 - ERROR - Unexpected error for term claude: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:16:56,374 - INFO - Processing term: midjourney
+2025-09-25 22:16:56,375 - INFO - Rate limiting: sleeping for 13.1 seconds
+2025-09-25 22:17:09,526 - ERROR - Unexpected error for term midjourney: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:17:09,527 - INFO - Processing term: stable diffusion
+2025-09-25 22:17:09,527 - INFO - Rate limiting: sleeping for 14.7 seconds
+2025-09-25 22:17:24,218 - ERROR - Unexpected error for term stable diffusion: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:17:24,219 - INFO - Processing term: dall-e
+2025-09-25 22:17:24,220 - INFO - Rate limiting: sleeping for 13.0 seconds
+2025-09-25 22:17:37,233 - ERROR - Unexpected error for term dall-e: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:17:37,235 - INFO - Processing term: perplexity
+2025-09-25 22:17:37,235 - INFO - Rate limiting: sleeping for 12.8 seconds
+2025-09-25 22:17:50,088 - ERROR - Unexpected error for term perplexity: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:17:50,089 - INFO - Processing term: notion ai
+2025-09-25 22:17:50,089 - INFO - Rate limiting: sleeping for 14.5 seconds
+2025-09-25 22:18:04,593 - ERROR - Unexpected error for term notion ai: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:18:04,594 - INFO - Processing term: canva ai
+2025-09-25 22:18:04,594 - INFO - Rate limiting: sleeping for 14.4 seconds
+2025-09-25 22:18:18,979 - ERROR - Unexpected error for term canva ai: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:18:18,980 - INFO - Processing category: ecommerce with 8 terms
+2025-09-25 22:18:18,980 - INFO - Processing term: shopify
+2025-09-25 22:18:18,980 - INFO - Rate limiting: sleeping for 14.6 seconds
+2025-09-25 22:18:33,619 - ERROR - Unexpected error for term shopify: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:18:33,620 - INFO - Processing term: woocommerce
+2025-09-25 22:18:33,620 - INFO - Rate limiting: sleeping for 13.6 seconds
+2025-09-25 22:18:47,227 - ERROR - Unexpected error for term woocommerce: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:18:47,228 - INFO - Processing term: dropshipping
+2025-09-25 22:18:47,228 - INFO - Rate limiting: sleeping for 14.5 seconds
+2025-09-25 22:19:01,770 - ERROR - Unexpected error for term dropshipping: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:19:01,772 - INFO - Processing term: print on demand
+2025-09-25 22:19:01,772 - INFO - Rate limiting: sleeping for 13.1 seconds
+2025-09-25 22:19:14,867 - ERROR - Unexpected error for term print on demand: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:19:14,867 - INFO - Processing term: amazon fba
+2025-09-25 22:19:14,867 - INFO - Rate limiting: sleeping for 14.7 seconds
+2025-09-25 22:19:29,579 - ERROR - Unexpected error for term amazon fba: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:19:29,580 - INFO - Processing term: etsy
+2025-09-25 22:19:29,580 - INFO - Rate limiting: sleeping for 12.3 seconds
+2025-09-25 22:19:41,902 - ERROR - Unexpected error for term etsy: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:19:41,903 - INFO - Processing term: affiliate marketing
+2025-09-25 22:19:41,903 - INFO - Rate limiting: sleeping for 12.7 seconds
+2025-09-25 22:19:54,655 - ERROR - Unexpected error for term affiliate marketing: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:19:54,655 - INFO - Processing term: social commerce
+2025-09-25 22:19:54,656 - INFO - Rate limiting: sleeping for 13.5 seconds
+2025-09-25 22:20:08,167 - ERROR - Unexpected error for term social commerce: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:20:08,167 - INFO - Processing category: fitness with 8 terms
+2025-09-25 22:20:08,168 - INFO - Processing term: home workout
+2025-09-25 22:20:08,168 - INFO - Rate limiting: sleeping for 13.7 seconds
+2025-09-25 22:20:21,862 - ERROR - Unexpected error for term home workout: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+2025-09-25 22:20:21,862 - INFO - Processing term: yoga
+2025-09-25 22:20:21,862 - INFO - Rate limiting: sleeping for 12.3 seconds
