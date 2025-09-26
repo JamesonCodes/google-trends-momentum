@@ -1,0 +1,102 @@
+{
+  "categories": {
+    "ai-tools": {
+      "weight": 1.0,
+      "terms": [
+        "chatgpt",
+        "claude",
+        "midjourney",
+        "stable diffusion",
+        "dall-e",
+        "perplexity",
+        "notion ai",
+        "canva ai"
+      ]
+    },
+    "ecommerce": {
+      "weight": 0.8,
+      "terms": [
+        "shopify",
+        "woocommerce",
+        "dropshipping",
+        "print on demand",
+        "amazon fba",
+        "etsy",
+        "affiliate marketing",
+        "social commerce"
+      ]
+    },
+    "fitness": {
+      "weight": 0.7,
+      "terms": [
+        "home workout",
+        "yoga",
+        "pilates",
+        "crossfit",
+        "running",
+        "cycling",
+        "weight training",
+        "fitness apps"
+      ]
+    },
+    "home-office": {
+      "weight": 0.6,
+      "terms": [
+        "standing desk",
+        "ergonomic chair",
+        "home office setup",
+        "remote work",
+        "zoom background",
+        "noise canceling headphones",
+        "monitor stand",
+        "desk organizer"
+      ]
+    },
+    "design-tools": {
+      "weight": 0.9,
+      "terms": [
+        "figma",
+        "canva",
+        "adobe creative suite",
+        "sketch",
+        "procreate",
+        "blender",
+        "webflow",
+        "framer"
+      ]
+    },
+    "crypto": {
+      "weight": 0.5,
+      "terms": [
+        "bitcoin",
+        "ethereum",
+        "nft",
+        "defi",
+        "web3",
+        "cryptocurrency",
+        "blockchain",
+        "metaverse"
+      ]
+    },
+    "sustainability": {
+      "weight": 0.8,
+      "terms": [
+        "solar panels",
+        "electric vehicle",
+        "renewable energy",
+        "sustainable living",
+        "zero waste",
+        "carbon footprint",
+        "green energy",
+        "eco friendly"
+      ]
+    }
+  },
+  "globalSettings": {
+    "maxTopicsPerCategory": 20,
+    "minVolumeThreshold": 10,
+    "timeframe": "today 12-m",
+    "geo": "",
+    "gprop": ""
+  }
+}
