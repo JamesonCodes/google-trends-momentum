@@ -77,38 +77,81 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
+            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+            Live Trending Data
+          </div>
+          
+          <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Rising Topics
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Discover trending topics across AI Tools, Tech, Business, and Science categories
+          
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Discover the most trending and rising topics across AI Tools, Tech, Business, and Science categories with real-time insights
           </p>
+          
+          {/* Value Proposition */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Discover Early Trends</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Find topics before they go mainstream and get ahead of the competition</p>
+              </div>
+              
+              <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data-Driven Insights</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Real growth metrics and trend analysis to make informed decisions</p>
+              </div>
+              
+              <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Stay Updated</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Fresh data updated regularly so you never miss emerging opportunities</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Data Status */}
+          <DataStatus 
+            lastUpdated={lastUpdated}
+            isStale={isStale}
+            onRefresh={refreshData}
+            loading={loading}
+          />
         </div>
 
-        {/* Data Status */}
-        <DataStatus 
-          lastUpdated={lastUpdated}
-          isStale={isStale}
-          onRefresh={refreshData}
-          loading={loading}
-        />
-
         {/* Filters */}
-        <Filters 
-          filters={filters}
-          onFiltersChange={setFilters}
-          categories={categories}
-        />
-
-        {/* Results Summary */}
-        <div className="mb-6">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Showing {filteredAndSortedTopics.length} of {topics.length} topics
-          </p>
+        <div className="mb-8">
+          <Filters 
+            filters={filters}
+            onFiltersChange={setFilters}
+            categories={categories}
+          />
+          
+          {/* Results Summary */}
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredAndSortedTopics.length}</span> of <span className="font-semibold text-gray-900 dark:text-white">{topics.length}</span> trending topics
+            </p>
+          </div>
         </div>
 
         {/* Topics Grid */}

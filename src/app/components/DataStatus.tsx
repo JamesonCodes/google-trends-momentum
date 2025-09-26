@@ -27,19 +27,19 @@ export default function DataStatus({ lastUpdated, isStale, onRefresh, loading }:
   };
 
   return (
-    <div className="flex items-center justify-between mb-4 p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+    <div className="flex items-center justify-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
       <div className="flex items-center space-x-2">
         <div className={`w-2 h-2 rounded-full ${isStale ? 'bg-yellow-500' : 'bg-green-500'}`} />
-        <span className="text-sm text-gray-600 dark:text-gray-400">
+        <span>
           Last updated: {formatLastUpdated(lastUpdated)}
         </span>
         {isStale && (
-          <span className="text-xs text-yellow-600 dark:text-yellow-400">
+          <span className="text-yellow-600 dark:text-yellow-400">
             (Stale)
           </span>
         )}
         {loading && (
-          <span className="text-xs text-blue-600 dark:text-blue-400">
+          <span className="text-blue-600 dark:text-blue-400">
             (Refreshing...)
           </span>
         )}
@@ -51,11 +51,11 @@ export default function DataStatus({ lastUpdated, isStale, onRefresh, loading }:
           onRefresh();
         }}
         disabled={loading}
-        className="flex items-center space-x-1 px-3 py-1 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="flex items-center space-x-1 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md transition-colors"
       >
         {loading ? (
           <>
-            <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin" />
+            <div className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin" />
             <span>Refreshing...</span>
           </>
         ) : (
